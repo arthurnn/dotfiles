@@ -19,3 +19,8 @@
 
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; remove annoying auto_fill mode
+(defun my-html-mode-hook ()
+  (auto-fill-mode -1))
+(add-hook 'html-mode-hook 'my-html-mode-hook)
