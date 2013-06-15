@@ -1,5 +1,7 @@
 # git
-source /usr/share/git-core/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
 
 #android
 export SDK_ROOT=/Users/arthurnn/Library/android-sdk-macosx
