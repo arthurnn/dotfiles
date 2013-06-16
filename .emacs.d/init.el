@@ -6,6 +6,12 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+(require 'rvm)
+(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+(add-hook 'ruby-mode-hook
+          (lambda () (rvm-activate-corresponding-ruby)))
 
 ;; install some starter-kits
 (defvar my-packages '(starter-kit starter-kit-ruby starter-kit-js starter-kit-bindings)
