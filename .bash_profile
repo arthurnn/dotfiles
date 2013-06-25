@@ -22,3 +22,5 @@ export TOMCAT_HOME=/Users/arthurnn/Library/apache-tomcat-7.0.14
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+[[ -s "/opt/boxen/env.sh" ]] && source "/opt/boxen/env.sh" # Load Boxen env
