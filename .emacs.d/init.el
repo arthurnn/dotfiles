@@ -20,16 +20,17 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; remove wierd ruby hash indentation
+(setq ruby-deep-indent-paren nil)
 
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 
 ;; trailing white-spaces before save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; remove annoying auto_fill mode
-(defun my-html-mode-hook ()
-  (auto-fill-mode -1))
-(add-hook 'html-mode-hook 'my-html-mode-hook)
+(auto-fill-mode -1)
+(remove-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; send backup files to its own dir
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -39,3 +40,13 @@
   kept-new-versions 20   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
 )
+
+
+(defun delete-grep-header ()
+  (save-excursion
+    (with-current-buffer grep-last-buffer
+      (goto-line 5)
+      (narrow-to-region (point) (point-max)))))
+
+(defadvice grep (after delete-grep-header activate) (delete-grep-header))
+(defadvice rgrep (after delete-grep-header activate) (delete-grep-header))
