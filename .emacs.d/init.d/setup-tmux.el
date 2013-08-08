@@ -1,4 +1,8 @@
-(setq tmux-session-name 0)
+(setq tmux-session-name
+ (substring
+  (shell-command-to-string "tmux list-panes -F '#{session_name}'")
+  0 -1))
+
 (setq tmux-window-name 1)
 (setq tmux-pane-number 0)
 
@@ -15,3 +19,7 @@
   (setq tmux-window-name y)
   (setq tmux-pane-number z)
   (message "Tmux Setup, session name: %s, window name: %s, pane number: %s" tmux-session-name tmux-window-name tmux-pane-number))
+
+(defun tmux-print-session-name ()
+  (interactive)
+  (message tmux-session-name))
