@@ -30,10 +30,9 @@
 
 (define-key ruby-mode-map (kbd "C-c t") 'ruby-jump-to-other)
 
-
 (defun minitest-run ()
   (interactive)
-  (tmux-exec "PARALLEL=true bundle exec rake tests")
+  (tmux-exec "PARALLEL=true bundle exec rake test")
   (message
    (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name)))
 
