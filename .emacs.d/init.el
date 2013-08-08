@@ -1,2 +1,7 @@
-(load "~/.emacs.d/init.d/01_packages")
-(load "~/.emacs.d/init.d/etc")
+
+(add-to-list 'load-path "~/.emacs.d/init.d/")
+
+(load "01_packages")
+(load "setup-tmux")
+(load "setup-etc")
+(load "setup-shopify")

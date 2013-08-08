@@ -1,15 +1,7 @@
-(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
-(add-hook 'ruby-mode-hook
-          (lambda () (rvm-activate-corresponding-ruby)))
-
-
-;; remove wierd ruby hash indentation
-(setq ruby-deep-indent-paren nil)
-
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 
 ;; trailing white-spaces before save
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; remove annoying auto_fill mode
 (auto-fill-mode -1)
