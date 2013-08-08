@@ -3,5 +3,6 @@
 
 (load "01_packages")
 (load "setup-tmux")
+(load "setup-ruby")
 (load "setup-etc")
 (load "setup-shopify")

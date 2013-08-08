@@ -29,3 +29,29 @@
     (ruby--jump-to-test)))
 
 (define-key ruby-mode-map (kbd "C-c t") 'ruby-jump-to-other)
+
+
+(defun minitest-run ()
+  (interactive)
+  (tmux-exec "PARALLEL=true bundle exec rake tests")
+  (message
+   (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name)))
+
+(defun minitest-unit-run ()
+  (interactive)
+  (tmux-exec "PARALLEL=true bundle exec rake tests:unit")
+  (message
+   (format "Running UNIT tests on tmux %s:%s..." tmux-session-name tmux-window-name)))
+
+(defun minitest-file-run ()
+  (interactive)
+  (tmux-exec
+   (format "bundle exec ruby -Itest %s" buffer-file-name))
+  (message
+   (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name)))
+
+(define-prefix-command 'ring-tests)
+(global-set-key (kbd "C-x t") 'ring-tests)
+(define-key ring-tests (kbd "a") 'minitest-run)
+(define-key ring-tests (kbd "u") 'minitest-unit-run)
+(define-key ring-tests (kbd "f") 'minitest-file-run)
