@@ -1,24 +1,7 @@
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-
-(require 'rvm)
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 (add-hook 'ruby-mode-hook
           (lambda () (rvm-activate-corresponding-ruby)))
 
-;; install some starter-kits
-(defvar my-packages '(starter-kit starter-kit-ruby starter-kit-js starter-kit-bindings)
-  "A list of packages to ensure are installed at launch.")
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
 
 ;; remove wierd ruby hash indentation
 (setq ruby-deep-indent-paren nil)
