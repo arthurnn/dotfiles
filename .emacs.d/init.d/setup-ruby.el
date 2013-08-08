@@ -38,7 +38,7 @@
 
 (defun minitest-unit-run ()
   (interactive)
-  (tmux-exec "PARALLEL=true bundle exec rake tests:unit")
+  (tmux-exec "PARALLEL=true bundle exec rake test:units")
   (message
    (format "Running UNIT tests on tmux %s:%s..." tmux-session-name tmux-window-name)))
 
