@@ -2,8 +2,7 @@
  (substring
   (shell-command-to-string "tmux list-panes -F '#{session_name}'")
   0 -1))
-
-(setq tmux-window-name 1)
+(setq tmux-window-name 2)
 (setq tmux-pane-number 0)
 
 (defun tmux-exec (command)
