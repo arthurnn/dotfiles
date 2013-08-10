@@ -15,7 +15,8 @@
                       starter-kit-bindings
                       rvm
                       yaml-mode
-                      coffee-mode)
+                      coffee-mode
+                      gist)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
