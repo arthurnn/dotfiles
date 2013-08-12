@@ -25,3 +25,6 @@
 
 (defadvice grep (after delete-grep-header activate) (delete-grep-header))
 (defadvice rgrep (after delete-grep-header activate) (delete-grep-header))
+
+;; set markdown default as rdiscount gem
+(setq markdown-command "rdiscount")
