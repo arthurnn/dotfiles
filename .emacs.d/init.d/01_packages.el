@@ -18,7 +18,9 @@
                       yaml-mode
                       coffee-mode
                       gist
-                      markdown-mode)
+                      markdown-mode
+                      color-theme
+                      color-theme-solarized)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
