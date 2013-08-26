@@ -6,6 +6,9 @@
 ;; remove wierd ruby hash indentation
 (setq ruby-deep-indent-paren nil)
 
+;; add a alias, otherwise gist wont open ruby files
+(defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings)
+
 (defun ruby--jump-to-test ()
   (find-file
    (replace-regexp-in-string
