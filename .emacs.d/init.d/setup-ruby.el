@@ -52,8 +52,25 @@
   (message
    (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name)))
 
+(defun minitest-file-uniq-run ()
+  (interactive)
+  (setq str (thing-at-point 'line))
+
+  (string-match "test \"\\([^\"]+?\\)\" do" str)
+  (setq test_region (match-string 1 str) )
+
+  (setq t2
+        (concat "test_"
+                (replace-regexp-in-string " " "_" test_region)))
+  (tmux-exec
+   (format "bundle exec ruby -Itest %s -n\"%s\"" buffer-file-name t2))
+  (message
+   (format "Running tests %s on tmux %s:%s..." t2 tmux-session-name tmux-window-name))
+)
+
 (define-prefix-command 'ring-tests)
 (global-set-key (kbd "C-x t") 'ring-tests)
 (define-key ring-tests (kbd "a") 'minitest-run)
 (define-key ring-tests (kbd "u") 'minitest-unit-run)
 (define-key ring-tests (kbd "f") 'minitest-file-run)
+(define-key ring-tests (kbd "n") 'minitest-file-uniq-run)
