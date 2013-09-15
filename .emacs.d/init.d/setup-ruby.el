@@ -86,6 +86,15 @@
    (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name))
 )
 
+(defun rspec-file-uniq-run ()
+  (interactive)
+  (setq x (line-number-at-pos))
+  (tmux-exec
+   (format "bundle exec rspec %s:%s" buffer-file-name x))
+  (message
+   (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name))
+)
+
 (define-prefix-command 'ring-tests)
 (global-set-key (kbd "C-x t") 'ring-tests)
 
