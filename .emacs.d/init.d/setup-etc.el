@@ -19,7 +19,6 @@
   kept-old-versions 5    ; and how many of the old
 )
 
-
 (defun delete-grep-header ()
   (save-excursion
     (with-current-buffer grep-last-buffer
@@ -31,3 +30,12 @@
 
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
+
+(defun delete-whitespaces-and-save ()
+  (interactive)
+
+  (delete-trailing-whitespace)
+  (save-buffer)
+)
+
+(global-set-key (kbd "C-c w") 'delete-whitespaces-and-save)

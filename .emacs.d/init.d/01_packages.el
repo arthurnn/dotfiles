@@ -10,9 +10,9 @@
   (package-refresh-contents))
 
 ;; install some starter-kits
-(defvar my-packages '(starter-kit 
-                      starter-kit-ruby 
-                      starter-kit-js 
+(defvar my-packages '(starter-kit
+                      starter-kit-ruby
+                      starter-kit-js
                       starter-kit-bindings
                       rvm
                       yaml-mode
