@@ -2,6 +2,9 @@
 
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default whitespace-style (quote
+  (face spaces tabs newline space-mark tab-mark newline-mark)))
+(setq-default show-trailing-whitespace t)
 
 ;; remove annoying auto_fill mode
 (auto-fill-mode -1)
