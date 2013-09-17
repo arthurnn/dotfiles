@@ -59,12 +59,12 @@
   (interactive)
   (setq str (thing-at-point 'line))
 
-  (string-match "test \"\\([^\"]+?\\)\" do" str)
-  (setq test_region (match-string 1 str) )
+  (when (string-match "test \"\\([^\"]+?\\)\" do" str)
+    (setq t2 (concat "test_" (replace-regexp-in-string " " "_" (match-string 1 str)))))
 
-  (setq t2
-        (concat "test_"
-                (replace-regexp-in-string " " "_" test_region)))
+  (when (string-match "def \\([_A-Za-z0-9]+\\)" str)
+    (setq t2 (match-string 1 str)))
+
   (tmux-exec
    (format "bundle exec ruby -Itest %s -n\"%s\"" buffer-file-name t2))
   (message
