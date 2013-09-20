@@ -1,4 +1,33 @@
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+;; the toolbar is just a waste of valuable screen estate
+;; in a tty tool-bar-mode does not properly auto-load, and is
+;; already disabled anyway
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+
+;; the menu bar is mostly useless as well
+;; but removing it under OS X doesn't make much sense
+(defun my-frame-config (frame)
+  "Custom behaviours for new frames."
+  (if (eq system-type 'darwin)
+      (with-selected-frame frame
+        (if (display-graphic-p)
+            (modify-frame-parameters frame '((menu-bar-lines . 1)))
+          (modify-frame-parameters frame '((menu-bar-lines . 0)))))
+    (menu-bar-mode -1)))
+(my-frame-config (selected-frame))
+(add-hook 'after-make-frame-functions 'my-frame-config)
+
+;; enable y/n answers
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Frame title show either a file or a
+;; buffer name (if the buffer isn't visiting a file)
+(setq frame-title-format
+      '("" invocation-name " " (:eval (if (buffer-file-name)
+                                          (abbreviate-file-name (buffer-file-name))
+                                        "%b"))))
+
+;;(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
