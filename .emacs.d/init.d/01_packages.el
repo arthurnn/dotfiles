@@ -11,7 +11,8 @@
   (package-refresh-contents))
 
 ;; install some starter-kits
-(defvar my-packages '(expand-region
+(defvar my-packages '(starter-kit
+                      expand-region
                       gist
                       markdown-mode
                       color-theme
