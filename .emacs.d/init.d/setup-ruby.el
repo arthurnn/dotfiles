@@ -13,8 +13,8 @@
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 ;;(require 'haml-mode)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
-(require 'rbenv)
-(global-rbenv-mode)
+;;(require 'rbenv)
+;;(global-rbenv-mode)
 
 
 ;; remove wierd ruby hash indentation
@@ -116,3 +116,28 @@
 (define-key ring-tests (kbd "u") 'minitest-unit-run)
 (define-key ring-tests (kbd "f") 'minitest-file-run)
 (define-key ring-tests (kbd "n") 'minitest-file-uniq-run)
+
+(custom-set-variables
+ '(ruby-test-ruby-executables '("ruby"))
+)
+
+;;(defvar ruby-minitest-minor-mode-map
+;;  (let ((map (make-sparse-keymap)))
+;;    (define-key map "q"    'quit-window)
+;;    (define-key map "p"    'previous-error-no-select)
+;;    (define-key map "n"    'next-error-no-select)
+;;    (define-key map "\M-p" 'ruby-compilation-previous-error-group)
+;;    (define-key map "\M-n" 'ruby-compilation-next-error-group)
+;;    (define-key map (kbd "C-c C-c") 'comint-interrupt-subjob)
+;;    map)
+;;  "Key map for Ruby minitest minor mode.")
+;;
+;;
+;;(define-minor-mode ruby-minitest-minor-mode
+;;  "Enable Ruby Compilation minor mode providing some key-bindings
+;;  for navigating ruby compilation buffers."
+;;  nil
+;;  " ruby:comp"
+;;  ruby-compilation-minor-mode-map
+;;  (when ruby-compilation-clear-between
+;;    (delete-region (point-min) (point-max))))
