@@ -20,3 +20,7 @@ To update, `cd` into your local `dotfiles` repository and then:
 ```bash
 source bootstrap.sh
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arthurnn/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
