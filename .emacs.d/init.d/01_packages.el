@@ -18,8 +18,8 @@
                       ruby-block
                       ruby-end
                       ruby-mode
-                      rbenv
                       rvm
+                      rubocop
                       yaml-mode
                       js2-mode
                       coffee-mode)
