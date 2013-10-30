@@ -56,6 +56,12 @@
 
 (defadvice grep (after delete-grep-header activate) (delete-grep-header))
 (defadvice rgrep (after delete-grep-header activate) (delete-grep-header))
+(eval-after-load "grep"
+  '(progn
+     ;; Don't recurse into some directories
+     (add-to-list 'grep-find-ignored-directories ".bundle")
+))
+
 
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
