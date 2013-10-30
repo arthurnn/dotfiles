@@ -1,6 +1,6 @@
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
-;;(add-hook 'ruby-mode-hook
-;;          (lambda () (rvm-activate-corresponding-ruby)))
+(add-hook 'ruby-mode-hook
+          (lambda () (rvm-activate-corresponding-ruby)))
 (add-hook 'ruby-mode 'rubocop-mode)
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
@@ -14,7 +14,6 @@
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 ;;(require 'haml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
-
 
 ;; remove wierd ruby hash indentation
 (setq ruby-deep-indent-paren nil)
@@ -68,5 +67,7 @@
 (define-key ring-tests (kbd "n") 'minitest-file-uniq-run)
 
 (custom-set-variables
- '(ruby-test-ruby-executables '("ruby"))
+ '(rspec-use-bundler-when-possible t)
+ '(rspec-use-rvm t)
+ '(rspec-use-zeus-when-possible t)
 )
