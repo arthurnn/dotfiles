@@ -13,7 +13,7 @@
 (add-to-list 'auto-mode-alist '("\\.builder\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
 ;;(require 'haml-mode)
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
+;;(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
 
 ;; remove wierd ruby hash indentation
@@ -21,30 +21,6 @@
 
 ;; add a alias, otherwise gist wont open ruby files
 (defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings)
-
-(defun ruby--jump-to-test ()
-  (find-file
-   (replace-regexp-in-string
-    "/lib/" "/test/"
-    (replace-regexp-in-string
-     "/\\([^/]+\\).rb$" "/test_\\1.rb"
-     (buffer-file-name)))))
-
-(defun ruby--jump-to-lib ()
-  (find-file
-   (replace-regexp-in-string
-    "/test/" "/lib/"
-    (replace-regexp-in-string
-     "/test_\\([^/]+\\).rb$" "/\\1.rb"
-     (buffer-file-name)))))
-
-(defun ruby-jump-to-other ()
-  (interactive)
-  (if (string-match-p "/test/" (buffer-file-name))
-      (ruby--jump-to-lib)
-    (ruby--jump-to-test)))
-
-;;(define-key ruby-mode-map (kbd "C-c t") 'ruby-jump-to-other)
 
 (defun minitest-run ()
   (interactive)
@@ -84,33 +60,8 @@
    (format "Running tests %s on tmux %s:%s..." t2 tmux-session-name tmux-window-name))
 )
 
-(defun rspec-run ()
-  (interactive)
-  (tmux-exec "bundle exec rspec")
-  (message
-   (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name))
-)
-
-(defun rspec-file-run ()
-  (interactive)
-  (tmux-exec
-   (format "bundle exec rspec %s" buffer-file-name))
-  (message
-   (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name))
-)
-
-(defun rspec-file-uniq-run ()
-  (interactive)
-  (setq x (line-number-at-pos))
-  (tmux-exec
-   (format "bundle exec rspec %s:%s" buffer-file-name x))
-  (message
-   (format "Running tests on tmux %s:%s..." tmux-session-name tmux-window-name))
-)
-
 (define-prefix-command 'ring-tests)
 (global-set-key (kbd "C-x t") 'ring-tests)
-
 (define-key ring-tests (kbd "a") 'minitest-run)
 (define-key ring-tests (kbd "u") 'minitest-unit-run)
 (define-key ring-tests (kbd "f") 'minitest-file-run)
@@ -119,24 +70,3 @@
 (custom-set-variables
  '(ruby-test-ruby-executables '("ruby"))
 )
-
-;;(defvar ruby-minitest-minor-mode-map
-;;  (let ((map (make-sparse-keymap)))
-;;    (define-key map "q"    'quit-window)
-;;    (define-key map "p"    'previous-error-no-select)
-;;    (define-key map "n"    'next-error-no-select)
-;;    (define-key map "\M-p" 'ruby-compilation-previous-error-group)
-;;    (define-key map "\M-n" 'ruby-compilation-next-error-group)
-;;    (define-key map (kbd "C-c C-c") 'comint-interrupt-subjob)
-;;    map)
-;;  "Key map for Ruby minitest minor mode.")
-;;
-;;
-;;(define-minor-mode ruby-minitest-minor-mode
-;;  "Enable Ruby Compilation minor mode providing some key-bindings
-;;  for navigating ruby compilation buffers."
-;;  nil
-;;  " ruby:comp"
-;;  ruby-compilation-minor-mode-map
-;;  (when ruby-compilation-clear-between
-;;    (delete-region (point-min) (point-max))))

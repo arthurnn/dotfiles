@@ -20,6 +20,7 @@
                       ruby-mode
                       rvm
                       rubocop
+                      rspec-mode
                       yaml-mode
                       js2-mode
                       coffee-mode)
