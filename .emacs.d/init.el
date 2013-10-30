@@ -6,3 +6,6 @@
 (load "setup-tmux")
 (load "setup-ruby")
 (load "setup-etc")
+
+
+(require 'minitest)
