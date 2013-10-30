@@ -1,4 +1,5 @@
 (require 'dash)
+(require 'ansi-color)
 
 (defcustom minitest-keymap-prefix (kbd "C-x t")
   "Minitest keymap prefix."
@@ -7,6 +8,7 @@
 
 (defun minitest-buffer-name (file-or-dir)
   (concat "*Minitest " file-or-dir "*"))
+
 
 (defun minitest-project-root ()
   "Retrieve the root directory of a project if available.
@@ -17,6 +19,15 @@ The current directory is assumed to be the project's root otherwise."
         (car))
       (error "You're not into a project")))
 
+
+(define-derived-mode minitest-compilation-mode compilation-mode ""
+  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (toggle-read-only))
+
 (defun minitest--file-command (command &optional post-command)
   "Run COMMAND on currently visited file."
   (let ((file-name (buffer-file-name (current-buffer)))
@@ -25,7 +36,7 @@ The current directory is assumed to be the project's root otherwise."
     (if file-name
         (compilation-start
          (concat command " " file-name (or post-command ""))
-         'compilation-mode
+         'minitest-compilation-mode
          (lambda (arg) (minitest-buffer-name file-name)))
       (error "Buffer is not visiting a file"))))
 
