@@ -23,6 +23,12 @@
     map)
   "Keymap for RuboCop mode.")
 
+;;;###autoload
+(defun shopify-buffer-is-shopify-p ()
+  (let ((file-name (buffer-file-name (current-buffer))))
+    (and file-name
+         (numberp (string-match "\\/shopify\\/" file-name)))))
+
 (defvar shopify-old-car-mode-line-position nil)
 
 ;;;###autoload
@@ -36,5 +42,14 @@
           (setq shopify-old-car-mode-line-position (car mode-line-position)))
         (setcar mode-line-position '(:eval (list (shopify-create)))))
     (setcar mode-line-position shopify-old-car-mode-line-position)))
+
+
+;;;###autoload
+(defun enable-shopify-mode ()
+  (if (shopify-buffer-is-shopify-p)
+      (shopify-mode)))
+
+;;;###autoload
+(add-hook 'ruby-mode-hook 'enable-shopify-mode)
 
 (provide 'shopify-mode)
