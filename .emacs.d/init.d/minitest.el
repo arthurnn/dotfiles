@@ -6,8 +6,16 @@
   :group 'minitest
   :type 'string)
 
+(defcustom minitest-use-zeus-when-possible t
+  "When t and .zeus.sock is present, run specs with 'zeus'."
+  :type 'boolean
+  :group 'minitest)
+
 (defun minitest-buffer-name (file-or-dir)
   (concat "*Minitest " file-or-dir "*"))
+
+(defun minitest-test-command ()
+  (if (minitest-zeus-p) "test" "ruby -I'lib:test'"))
 
 (defun minitest-project-root ()
   "Retrieve the root directory of a project if available.
@@ -18,6 +26,10 @@ The current directory is assumed to be the project's root otherwise."
         (car))
       (error "You're not into a project")))
 
+(defun minitest-zeus-p ()
+  (and minitest-use-zeus-when-possible
+       (file-exists-p (concat (minitest-project-root) ".zeus.sock"))))
+
 (define-derived-mode minitest-compilation-mode compilation-mode ""
   (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
 
@@ -26,14 +38,16 @@ The current directory is assumed to be the project's root otherwise."
   (ansi-color-apply-on-region (point-min) (point-max))
   (toggle-read-only))
 
-(defun minitest--file-command (command &optional post-command)
+(defun minitest--file-command (&optional post-command)
   "Run COMMAND on currently visited file."
   (let ((file-name (buffer-file-name (current-buffer)))
         (default-directory (minitest-project-root))
-        (compilation-scroll-output t))
+        (compilation-scroll-output t)
+        (command (minitest-test-command))
+        (zeus-command (if (minitest-zeus-p) "bundle exec zeus " nil)))
     (if file-name
         (compilation-start
-         (concat command " " file-name (or post-command ""))
+         (concat zeus-command command " " file-name (or post-command ""))
          'minitest-compilation-mode
          (lambda (arg) (minitest-buffer-name file-name)))
       (error "Buffer is not visiting a file"))))
@@ -41,7 +55,7 @@ The current directory is assumed to be the project's root otherwise."
 (defun minitest-verify ()
   "Run on current file."
   (interactive)
-  (minitest--file-command "ruby -I'lib:test'"))
+  (minitest--file-command))
 
 (defun minitest--extract-str (str)
   (or (string-match "test \"\\([^\"]+?\\)\" do" str)
@@ -51,9 +65,9 @@ The current directory is assumed to be the project's root otherwise."
   "Run on current file."
   (interactive)
   (let ((str (thing-at-point 'line)))
-    (minitest--extract-str str)
-    (minitest--file-command "ruby -I'lib:test'"
-     (format  " -n\"test_%s\"" (replace-regexp-in-string " " "_" (match-string 1 str))))))
+    (if (minitest--extract-str str)
+        (minitest--file-command
+         (format  " -n\"test_%s\"" (replace-regexp-in-string " " "_" (match-string 1 str)))))))
 
 ;;; Minor mode
 (defvar minitest-mode-map
