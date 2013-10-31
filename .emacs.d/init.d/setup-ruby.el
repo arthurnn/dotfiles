@@ -1,7 +1,12 @@
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 (add-hook 'ruby-mode-hook
           (lambda () (rvm-activate-corresponding-ruby)))
-(add-hook 'ruby-mode 'rubocop-mode)
+
+;; add rubocop - Ruby static code analyzer
+(add-hook 'ruby-mode-hook 'rubocop-mode)
+
+;; turn off auto-fill
+(add-hook 'ruby-mode-hook 'turn-off-auto-fill)
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode))
@@ -12,6 +17,7 @@
 (add-to-list 'auto-mode-alist '("\\.jbuilder\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.builder\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile\\" . ruby-mode))
 ;;(require 'haml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
