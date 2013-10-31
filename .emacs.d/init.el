@@ -9,3 +9,4 @@
 
 
 (require 'minitest)
+(require 'shopify-mode)

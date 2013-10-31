@@ -62,15 +62,5 @@
      (add-to-list 'grep-find-ignored-directories ".bundle")
 ))
 
-
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
-
-(defun delete-whitespaces-and-save ()
-  (interactive)
-
-  (delete-trailing-whitespace)
-  (save-buffer)
-)
-
-(global-set-key (kbd "C-c w") 'delete-whitespaces-and-save)
