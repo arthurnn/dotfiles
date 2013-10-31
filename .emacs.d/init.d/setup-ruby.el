@@ -17,7 +17,7 @@
 (add-to-list 'auto-mode-alist '("\\.jbuilder\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.builder\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.erb$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Vagrantfile\\" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 ;;(require 'haml-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
