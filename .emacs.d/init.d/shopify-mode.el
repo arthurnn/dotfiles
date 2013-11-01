@@ -13,7 +13,7 @@
     (rspec-mode -1)
     (rspec-verifiable-mode -1)
     (minitest-mode)
-    (remove-hook 'before-save-hook 'delete-trailing-whitespace)
+    (turn-off-delete-trailing-whitespace)
     (shopify-customize)
     (concat "Shopify"
             " 🍺  ")))

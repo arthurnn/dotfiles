@@ -31,6 +31,8 @@
 
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(defun turn-off-delete-trailing-whitespace ()
+    (remove-hook 'before-save-hook 'delete-trailing-whitespace))
 (setq-default whitespace-style (quote
   (face spaces tabs newline space-mark tab-mark newline-mark)))
 (setq-default show-trailing-whitespace t)
@@ -64,3 +66,4 @@
 
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
+(add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
