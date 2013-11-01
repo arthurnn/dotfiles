@@ -83,7 +83,7 @@ The current directory is assumed to be the project's root otherwise."
 
       (define-key map minitest-keymap-prefix prefix-map))
     map)
-  "Keymap for RuboCop mode.")
+  "Keymap for minitest-mode.")
 
 ;;;###autoload
 (define-minor-mode minitest-mode
