@@ -4,12 +4,17 @@
   (delete-trailing-whitespace)
   (save-buffer))
 
+(defun shopify-customize ()
+  (custom-set-variables
+   '(minitest-default-env "SHOW_DOTS=1")))
+
 (defun shopify-create ()
-  (let* ((outerspace-string ""))
+  (let* ((string ""))
     (rspec-mode -1)
     (rspec-verifiable-mode -1)
     (minitest-mode)
     (remove-hook 'before-save-hook 'delete-trailing-whitespace)
+    (shopify-customize)
     (concat "Shopify"
             " 🍺  ")))
 

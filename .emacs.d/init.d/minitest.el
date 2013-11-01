@@ -11,6 +11,11 @@
   :type 'boolean
   :group 'minitest)
 
+(defcustom minitest-default-env ""
+  "Default env vars for minitest"
+  :type 'string
+  :group 'minitest)
+
 (defun minitest-buffer-name (file-or-dir)
   (concat "*Minitest " file-or-dir "*"))
 
@@ -44,10 +49,10 @@ The current directory is assumed to be the project's root otherwise."
         (default-directory (minitest-project-root))
         (compilation-scroll-output t)
         (command (minitest-test-command))
-        (zeus-command (if (minitest-zeus-p) "bundle exec zeus " nil)))
+        (zeus-command (if (minitest-zeus-p) "bundle exec zeus" nil)))
     (if file-name
         (compilation-start
-         (concat zeus-command command " " file-name (or post-command ""))
+         (concat minitest-default-env " " zeus-command " " command " " file-name (or post-command ""))
          'minitest-compilation-mode
          (lambda (arg) (minitest-buffer-name file-name)))
       (error "Buffer is not visiting a file"))))
