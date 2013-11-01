@@ -87,9 +87,7 @@ The current directory is assumed to be the project's root otherwise."
 
 ;;;###autoload
 (define-minor-mode minitest-mode
-  "Minor mode to assist project management and navigation.
-
-\\{projectile-mode-map}"
+  "Minor mode for *_test (minitest) files"
   :lighter " Minitest"
   :keymap minitest-mode-map
   :group 'minitest)
