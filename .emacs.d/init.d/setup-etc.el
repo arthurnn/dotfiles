@@ -59,7 +59,7 @@
 (eval-after-load "grep"
   '(progn
      ;; Don't recurse into some directories
-     (add-to-list 'grep-find-ignored-directories ".bundle")
+     (add-to-list 'grep-find-ignored-directories ".bundle" ".vendor")
 ))
 
 ;; set markdown default as rdiscount gem
