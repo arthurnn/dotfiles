@@ -1,7 +1,7 @@
 (require 'dash)
 (require 'ansi-color)
 
-(defcustom minitest-keymap-prefix (kbd "C-x t")
+(defcustom minitest-keymap-prefix (kbd "C-c ,")
   "Minitest keymap prefix."
   :group 'minitest
   :type 'string)
