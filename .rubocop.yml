@@ -1,4 +1,7 @@
 # This is the configuration used to check the rubocop source code.
 
 SignalException:
-  EnforcedStyle: semantic
+  EnforcedStyle: only_raise
+
+LineLength:
+  Max: 140
