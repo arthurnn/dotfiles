@@ -3,6 +3,8 @@ if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
 fi
 
+export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
+
 #android
 #export SDK_ROOT=/Users/arthurnn/Library/android-sdk-macosx
 #PATH=${PATH}:${SDK_ROOT}/tools
