@@ -6,8 +6,9 @@ fi
 # git alias
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
 
-
+# terminal configs
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
+export TERM="xterm-256color"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
