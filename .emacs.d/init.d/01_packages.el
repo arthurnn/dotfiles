@@ -9,6 +9,7 @@
 
 ;; install some starter-kits
 (defvar my-packages '(starter-kit
+                      mo-git-blame
                       expand-region
                       gist
                       markdown-mode
