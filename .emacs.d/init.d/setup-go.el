@@ -1,16 +1,7 @@
 (add-hook
  'go-mode-hook
  '(lambda ()
-
-    ;; Imenu & Speedbar
-
-    (setq imenu-generic-expression
-          '(("type" "^type *\\([^ \t\n\r\f]*\\)" 1)
-            ("func" "^func *\\(.*\\) {" 1)))
-    (imenu-add-to-menubar "Index")
-
     ;; Outline mode
-
     ;; Level 3: //.  use this to devide the file into major sections
     ;; Level 4: //   followed by at least two characters
     ;; Level 4: package
@@ -27,31 +18,9 @@
     (local-set-key "\M-a" 'outline-previous-visible-heading)
     (local-set-key "\M-e" 'outline-next-visible-heading)
 
-    ;; Menu bar
-
-    (require 'easymenu)
-    (defconst go-hooked-menu
-      '("Go tools"
-        ["Go run buffer" go t]
-        ["Go build buffer" go-build t]
-        ["Go build directory" go-build-dir t]
-        ["Go reformat buffer" go-fmt-buffer t]
-        "---"
-        ["Go check buffer" go-fix-buffer t]
-        "---"
-        ["Go install package" go-install-package t]
-        ["Go test package" go-test-package t]))
-    (easy-menu-define
-      go-added-menu
-      (current-local-map)
-      "Go tools"
-      go-hooked-menu)
-
     ;; Other
-
     (setq tab-width 4)
     (setq show-trailing-whitespace t)
-
     ))
 
 ;; helper variable
