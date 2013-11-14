@@ -5,8 +5,8 @@
 (load "setup-colors")
 (load "setup-tmux")
 (load "setup-ruby")
+(load "setup-go")
 (load "setup-etc")
-
 
 (require 'minitest)
 (require 'shopify-mode)

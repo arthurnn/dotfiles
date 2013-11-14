@@ -10,6 +10,7 @@
 ;; install some starter-kits
 (defvar my-packages '(starter-kit
                       mo-git-blame
+                      go-mode
                       expand-region
                       gist
                       markdown-mode

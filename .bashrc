@@ -1,4 +1,3 @@
-
 # git
 if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
@@ -14,6 +13,9 @@ export TERM="xterm-256color"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # Load Boxen env
 [[ -s "/opt/boxen/env.sh" ]] && source "/opt/boxen/env.sh"
+
+# Go
+export GOPATH="/Users/arthurnn/dev/go"
 
 # Shopify config
 export ZOOKEEPER_ENABLED=1
