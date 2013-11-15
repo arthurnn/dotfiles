@@ -8,5 +8,4 @@
 (load "setup-go")
 (load "setup-etc")
 
-(require 'minitest)
 (require 'shopify-mode)
