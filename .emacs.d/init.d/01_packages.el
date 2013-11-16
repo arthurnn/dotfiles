@@ -24,6 +24,7 @@
                       rvm
                       rubocop
                       rspec-mode
+                      minitest
                       yaml-mode
                       js2-mode
                       coffee-mode)
