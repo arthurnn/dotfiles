@@ -67,15 +67,3 @@
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
-
-;; ERC
-
-;; This causes ERC to connect to the Freenode network upon hitting
-;; C-c e f.  Replace MYNICK with your IRC nick.
-(global-set-key "\C-cef" (lambda () (interactive)
-                           (erc :server "irc.freenode.net" :port "6667"
-                                :nick "arthurnn")))
-
-;; Join the #emacs and #erc channels whenever connecting to
-;; Freenode.
-(setq erc-autojoin-channels-alist '(("freenode.net" "#mongoid" "#emacs" "#mongodb")))
