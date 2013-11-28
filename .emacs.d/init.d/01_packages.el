@@ -6,7 +6,7 @@
                       ;Git
                       magit mo-git-blame gist
                       ; Misc modes
-                      go-mode markdown-mode
+                      go-mode markdown-mode ido-ubiquitous
                       ;Themes
                       color-theme color-theme-solarized
                       ;Ruby
