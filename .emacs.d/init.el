@@ -30,6 +30,7 @@
 	  setup-go
 	  setup-etc
 	  setup-erc
+	  setup-bindings
 	  shopify-mode))
 
 ;; SETTINGS (SYSTEM)
