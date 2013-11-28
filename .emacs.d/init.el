@@ -1,6 +1,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/init.d/")
-(load "01_packages")
+(require '01_packages)
 (require 'growl)
 
 
