@@ -17,10 +17,13 @@
 	  uniquify
 	  ansi-color))
 
-;; Custom requires
+;; Custom libs
+(require 'growl)
+(require 'idomenu)
+
+;; Setup stuff
 (mapcar 'require
         '(01_packages
-	  growl
 	  setup-colors
 	  setup-tmux
 	  setup-ruby
