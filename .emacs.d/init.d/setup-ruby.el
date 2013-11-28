@@ -51,3 +51,5 @@
  '(rspec-use-rvm t)
  '(rspec-use-zeus-when-possible t)
 )
+
+(provide 'setup-ruby)

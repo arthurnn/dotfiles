@@ -22,3 +22,5 @@
 (defun tmux-print-session-name ()
   (interactive)
   (message tmux-session-name))
+
+(provide 'setup-tmux)

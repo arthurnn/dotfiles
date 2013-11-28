@@ -76,3 +76,5 @@
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
+
+(provide 'setup-etc)

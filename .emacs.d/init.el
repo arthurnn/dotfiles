@@ -1,14 +1,12 @@
-
 (add-to-list 'load-path "~/.emacs.d/init.d/")
-(require '01_packages)
-(require 'growl)
 
-
-(load "setup-colors")
-(load "setup-tmux")
-(load "setup-ruby")
-(load "setup-go")
-(load "setup-etc")
-(load "setup-erc")
-
-(require 'shopify-mode)
+(mapcar 'require
+        '(01_packages
+	  growl
+	  setup-colors
+	  setup-tmux
+	  setup-ruby
+	  setup-go
+	  setup-etc
+	  setup-erc
+	  shopify-mode))

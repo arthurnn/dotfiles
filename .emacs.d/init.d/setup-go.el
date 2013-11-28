@@ -103,3 +103,6 @@
       ((pkg (read-from-minibuffer "Test package: " nil nil nil 'hook-go-pkg)))
     (if (not (string= pkg ""))
         (compile (concat "go test \"" pkg "\"")))))
+
+
+(provide 'setup-go)

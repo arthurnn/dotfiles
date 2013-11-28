@@ -41,3 +41,5 @@
 (defun flowdock ()
   (interactive)
   (erc-tls :server "irc.flowdock.com" :port 6697 :nick "arthurnn"))
+
+(provide 'setup-erc)
