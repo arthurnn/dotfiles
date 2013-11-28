@@ -1,33 +1,3 @@
-;; the toolbar is just a waste of valuable screen estate
-;; in a tty tool-bar-mode does not properly auto-load, and is
-;; already disabled anyway
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-
-;; the menu bar is mostly useless as well
-;; but removing it under OS X doesn't make much sense
-(defun my-frame-config (frame)
-  "Custom behaviours for new frames."
-  (if (eq system-type 'darwin)
-      (with-selected-frame frame
-        (if (display-graphic-p)
-            (modify-frame-parameters frame '((menu-bar-lines . 1)))
-          (modify-frame-parameters frame '((menu-bar-lines . 0)))))
-    (menu-bar-mode -1)))
-(my-frame-config (selected-frame))
-(add-hook 'after-make-frame-functions 'my-frame-config)
-
-;; Wind Move
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
-(global-set-key (kbd "C-c <left>")  'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <up>")    'windmove-up)
-(global-set-key (kbd "C-c <down>")  'windmove-down)
-
-;; enable y/n answers
-(fset 'yes-or-no-p 'y-or-n-p)
-
 ;; Frame title show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
@@ -35,7 +5,11 @@
                                           (abbreviate-file-name (buffer-file-name))
                                         "%b"))))
 
-;;(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
+;; Git mode
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green3")
+     (set-face-foreground 'magit-diff-del "red3")))
 
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -45,10 +19,6 @@
   (face spaces tabs newline space-mark tab-mark newline-mark)))
 (setq-default show-trailing-whitespace t)
 
-;; remove annoying auto_fill mode
-(auto-fill-mode -1)
-(remove-hook 'text-mode-hook 'turn-on-auto-fill)
-
 ;; send backup files to its own dir
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
@@ -57,8 +27,10 @@
   kept-new-versions 20   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
 )
+;; turn off recentf
 (recentf-mode -1)
 
+;; Grep stuff
 (defun delete-grep-header ()
   (save-excursion
     (with-current-buffer grep-last-buffer
@@ -76,5 +48,12 @@
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
+
+;; Modes for file extensions
+;;(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
 
 (provide 'setup-etc)
