@@ -15,6 +15,9 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Jump to a definition in the current file. (This is awesome.)
+(global-set-key (kbd "C-x C-i") 'idomenu)
+
 ;; git status
 (global-set-key (kbd "C-x g") 'magit-status)
 
