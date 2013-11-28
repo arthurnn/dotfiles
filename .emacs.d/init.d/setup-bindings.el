@@ -15,5 +15,7 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; git status
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (provide 'setup-bindings)
