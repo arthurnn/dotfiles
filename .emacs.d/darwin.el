@@ -12,8 +12,10 @@
                       (process-send-string proc text)
                               (process-send-eof proc))))
 
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
+(unless (getenv "TMUX")
+  (progn
+    (setq interprogram-cut-function 'paste-to-osx)
+    (setq interprogram-paste-function 'copy-from-osx)))
 
 (provide 'darwin)
 ;;; darwin.el ends here
