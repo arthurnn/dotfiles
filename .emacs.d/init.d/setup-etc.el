@@ -60,7 +60,16 @@
       ido-use-virtual-buffers t
       ido-handle-duplicate-virtual-buffers 2
       ido-max-prospects 10)
-
+;; ido mode on M-x
+(global-set-key
+ "\M-x"
+ (lambda ()
+   (interactive)
+   (call-interactively
+    (intern
+     (ido-completing-read
+      "M-x "
+      (all-completions "" obarray 'commandp))))))
 
 ;; Modes for file extensions
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
