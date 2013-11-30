@@ -1,9 +1,8 @@
 ;; ERC
 
-;; Join the #emacs and #erc channels whenever connecting to
 ;; Freenode.
-(setq erc-autojoin-channels-alist '(("freenode.net" "#mongoid" "#emacs" "#mongodb")))
-
+(setq erc-keywords '("@arthurnn" "@all" "@everyone"))
+(setq erc-autojoin-channels-alist '(("freenode.net" "#mongoid" "#emacs" "#mongodb" "#24pullrequests")))
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "477"))
 
@@ -36,7 +35,6 @@
 
 ;; Flowdock
 
-(setq erc-keywords '("@arthurnn" "@all" "@everyone"))
 
 (defun flowdock ()
   (interactive)
