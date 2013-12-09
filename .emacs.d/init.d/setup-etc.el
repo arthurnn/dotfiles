@@ -73,8 +73,16 @@
 
 ;; Modes for file extensions
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.sass$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
+
+;; custom vars
+(custom-set-variables
+ '(coffee-tab-width 4)
+)
+
 
 (provide 'setup-etc)
