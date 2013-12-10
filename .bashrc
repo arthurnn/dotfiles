@@ -21,6 +21,8 @@ export GOPATH="/Users/arthurnn/dev/go"
 # Shopify config
 export ZOOKEEPER_ENABLED=1
 
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
 genpasswd() {
     local l=$1
     [ "$l" == "" ] && l=16
