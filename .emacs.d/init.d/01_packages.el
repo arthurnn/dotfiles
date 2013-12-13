@@ -10,7 +10,7 @@
                       ;Themes
                       color-theme color-theme-solarized
                       ;Ruby
-                      ruby-mode inf-ruby ruby-block ruby-end rvm rubocop rspec-mode minitest yaml-mode
+                      ruby-mode inf-ruby ruby-block ruby-end rvm rubocop rspec-mode minitest yaml-mode haml-mode
                       ;JS
                       js2-mode coffee-mode
 )  "A list of packages to ensure are installed at launch.")
