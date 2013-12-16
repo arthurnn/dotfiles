@@ -82,7 +82,7 @@
 ;; custom vars
 (custom-set-variables
  '(coffee-tab-width 4)
+ '(css-indent-offset 2)
 )
-
 
 (provide 'setup-etc)
