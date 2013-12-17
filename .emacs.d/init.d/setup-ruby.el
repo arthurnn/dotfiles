@@ -29,6 +29,22 @@
 ;; add a alias, otherwise gist wont open ruby files
 (defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings)
 
+
+(defun ruby-interpolation-insert ()
+  "Called when interpolation key is pressed"
+  (interactive)
+  (insert "#")
+  (when (and
+         (looking-back "\".*")
+         (looking-at ".*\""))
+    (insert "{}")
+    (backward-char 1)))
+
+(eval-after-load 'ruby-mode
+  '(progn
+     (define-key ruby-mode-map (kbd "#") 'ruby-interpolation-insert)))
+
+;; Some custom vars
 (custom-set-variables
  '(rspec-use-bundler-when-possible t)
  '(rspec-use-rvm t)
