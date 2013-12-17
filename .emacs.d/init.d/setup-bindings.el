@@ -20,5 +20,6 @@
 
 ;; git status
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x C-g") 'vc-git-grep)
 
 (provide 'setup-bindings)
