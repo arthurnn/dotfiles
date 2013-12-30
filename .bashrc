@@ -14,7 +14,8 @@ export TERM="xterm-256color"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Go
-export GOPATH="/Users/arthurnn/dev/go"
+export GOPATH=$HOME/dev/go
+export PATH=$PATH:$GOPATH/bin
 
 # Shopify config
 export ZOOKEEPER_ENABLED=1
