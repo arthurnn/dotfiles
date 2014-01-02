@@ -15,3 +15,5 @@ Thumbs.db
 
 # Ignore emacs buffer files
 \#*#
+
+vendor/bundle
