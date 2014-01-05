@@ -19,6 +19,9 @@ export ZOOKEEPER_ENABLED=1
 
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 genpasswd() {
     local l=$1
     [ "$l" == "" ] && l=16
