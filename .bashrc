@@ -21,6 +21,9 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if [ -f ~/.rbenv/completions/rbenv.bash ]; then
+  source ~/.rbenv/completions/rbenv.bash
+fi
 
 genpasswd() {
     local l=$1
