@@ -10,7 +10,7 @@
                       ;Themes
                       color-theme color-theme-solarized
                       ;Ruby
-                      ruby-mode inf-ruby ruby-block ruby-end rvm
+                      ruby-mode inf-ruby ruby-block ruby-end
 		      rubocop rspec-mode minitest yaml-mode haml-mode
 		      flymake-ruby
                       ;JS

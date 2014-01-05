@@ -1,7 +1,3 @@
-(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
-(add-hook 'ruby-mode-hook
-          (lambda () (rvm-activate-corresponding-ruby)))
-
 ;; add rubocop - Ruby static code analyzer
 (add-hook 'ruby-mode-hook 'rubocop-mode)
 
@@ -47,7 +43,6 @@
 ;; Some custom vars
 (custom-set-variables
  '(rspec-use-bundler-when-possible t)
- '(rspec-use-rvm t)
  '(rspec-use-zeus-when-possible t)
 )
 

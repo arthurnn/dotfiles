@@ -10,9 +10,6 @@ alias egit='emacs $(git ls-files -m)'
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
 export TERM="xterm-256color"
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Go
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
