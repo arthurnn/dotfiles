@@ -4,9 +4,12 @@
   (delete-trailing-whitespace)
   (save-buffer))
 
+(require 'magit)
 (defun shopify-customize ()
-  (custom-set-variables
-   '(minitest-default-env "SHOW_DOTS=1 RAILS4=1")))
+  (let ((env (if (string= "rails-4-preview" (magit-get-current-branch)) "RAILS4=1" "")))
+    (custom-set-variables
+     '(minitest-default-env (concat "SHOW_DOTS=1 " env))))
+  )
 
 (defun shopify-create ()
   (let* ((string ""))
