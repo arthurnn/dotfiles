@@ -17,5 +17,9 @@
     (setq interprogram-cut-function 'paste-to-osx)
     (setq interprogram-paste-function 'copy-from-osx)))
 
+(setq browse-url-browser-function
+        'browse-url-generic browse-url-generic-program
+        "open")
+
 (provide 'darwin)
 ;;; darwin.el ends here
