@@ -10,6 +10,9 @@ alias egit='emacs $(git ls-files -m)'
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
 export TERM="xterm-256color"
 
+# Cask
+export PATH=$PATH:$HOME/.cask/bin
+
 # Go
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
@@ -17,6 +20,7 @@ export PATH=$PATH:$GOPATH/bin
 # Shopify config
 export ZOOKEEPER_ENABLED=1
 
+# Vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 # rbenv
