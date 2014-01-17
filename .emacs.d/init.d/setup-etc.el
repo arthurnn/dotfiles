@@ -83,6 +83,10 @@
 (custom-set-variables
  '(coffee-tab-width 4)
  '(css-indent-offset 2)
+ ;; changelog vars
+ '(add-log-full-name "Arthur Neves")
+ '(add-log-mailing-address "arthurnn@gmail.com")
+ '(change-log-default-name "CHANGELOG.md")
 )
 
 (provide 'setup-etc)
