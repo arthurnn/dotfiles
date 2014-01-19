@@ -40,7 +40,7 @@
   '(progn
      (define-key ruby-mode-map (kbd "#") 'ruby-interpolation-insert)
      (define-key ruby-mode-map (kbd "C-c b")
-       (λ () (interactive) (async-shell-command "bundle install" "**Bundler**")))))
+       (lambda () (interactive) (async-shell-command "bundle install" "**Bundler**")))))
 
 ;; Some custom vars
 (custom-set-variables
