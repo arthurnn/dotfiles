@@ -34,10 +34,25 @@
 (add-hook 'erc-track-list-changed-hook 'ted-erc-growl)
 
 ;; Flowdock
-
-
 (defun flowdock ()
   (interactive)
   (erc-tls :server "irc.flowdock.com" :port 6697 :nick "arthurnn"))
+
+
+;; start ZNC + IRC
+(defun start-irc ()
+  (interactive)
+  (config-znc)
+  (znc-erc "freenode")
+)
+
+;; auto identify
+(defun config-znc ()
+  (when (file-exists-p (expand-file-name "~/.emacs.d/.ercpass.el.gpg"))
+    (load-library ".ercpass.el.gpg")
+    (setq znc-servers `(("apps.arthurnn.com" 5000 nil
+			 ((freenode ,"arthurnn" ,znc-password)))))
+    ))
+
 
 (provide 'setup-erc)
