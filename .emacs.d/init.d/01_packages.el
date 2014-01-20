@@ -6,13 +6,13 @@
                       ;Git
                       magit mo-git-blame gist
                       ; Misc modes
-                      go-mode markdown-mode ido-ubiquitous
+                      go-mode markdown-mode ido-ubiquitous znc
                       ;Themes
                       color-theme color-theme-solarized
                       ;Ruby
                       ruby-mode inf-ruby ruby-block ruby-end
 		      rubocop rspec-mode minitest yaml-mode haml-mode
-		      flymake-ruby
+		      flymake-ruby rbenv
                       ;JS
                       js2-mode coffee-mode
 )  "A list of packages to ensure are installed at launch.")
