@@ -42,6 +42,11 @@
      (define-key ruby-mode-map (kbd "C-c b")
        (lambda () (interactive) (async-shell-command "bundle install" "**Bundler**")))))
 
+(defun rails-test-ar-conn(db)
+  (interactive
+   (list (ido-completing-read "Which section to modified: " '("mysql2" "sqlite3" "pg"))))
+  (setenv "ARCONN" db))
+
 ;; Some custom vars
 (custom-set-variables
  '(rspec-use-bundler-when-possible t)
