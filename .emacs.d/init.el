@@ -3,6 +3,9 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+;; PATH var
+(add-to-list 'exec-path "/usr/local/bin")
+
 ;; Load path etc.
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
