@@ -25,7 +25,6 @@
 ;; add a alias, otherwise gist wont open ruby files
 (defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings)
 
-
 (defun ruby-interpolation-insert ()
   "Called when interpolation key is pressed"
   (interactive)
@@ -44,7 +43,7 @@
 
 (defun rails-test-ar-conn(db)
   (interactive
-   (list (ido-completing-read "Which section to modified: " '("mysql2" "sqlite3" "pg"))))
+   (list (ido-completing-read "Which section to modified: " '("mysql2" "sqlite3" "postgresql"))))
   (setenv "ARCONN" db))
 
 ;; Some custom vars
