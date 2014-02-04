@@ -50,11 +50,9 @@
 
 ;; auto identify
 (defun config-znc ()
-  (when (file-exists-p (expand-file-name "~/.emacs.d/.ercpass.el.gpg"))
-    (load-library ".ercpass.el.gpg")
-    (setq znc-servers `(("apps.arthurnn.com" 5000 nil
-			 ((freenode ,"arthurnn" ,znc-password)))))
-    ))
+  (load-library "passwords.el.gpg")
+  (setq znc-servers `(("apps.arthurnn.com" 5000 nil
+		       ((freenode ,"arthurnn" ,znc-password))))))
 
 
 (provide 'setup-erc)
