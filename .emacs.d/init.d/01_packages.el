@@ -16,7 +16,6 @@
                       ;JS
                       js2-mode coffee-mode
 		      ; Misc
-		      github-browse-file hackernews
 )  "A list of packages to ensure are installed at launch.")
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
