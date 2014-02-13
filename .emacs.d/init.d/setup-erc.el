@@ -50,9 +50,9 @@
 
 ;; auto identify
 (defun config-znc ()
-  (load-library "passwords.el.gpg")
+  (unless (boundp 'znc-password)
+    (load-passwords))
   (setq znc-servers `(("apps.arthurnn.com" 5000 nil
 		       ((freenode ,"arthurnn" ,znc-password))))))
-
 
 (provide 'setup-erc)

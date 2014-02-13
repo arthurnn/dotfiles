@@ -45,6 +45,10 @@
      (add-to-list 'grep-find-ignored-directories ".bundle" "vendor")
 ))
 
+(defun load-passwords ()
+  (interactive)
+  (load-library "passwords.el.gpg"))
+
 ;; set markdown default as rdiscount gem
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
