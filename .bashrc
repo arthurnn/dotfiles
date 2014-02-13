@@ -19,6 +19,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Shopify config
 export ZOOKEEPER_ENABLED=1
+alias shopify='cd ~/src/vagrant/; vagrant ssh'
 
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
