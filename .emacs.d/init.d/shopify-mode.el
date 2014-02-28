@@ -6,7 +6,7 @@
 
 (defun shopify-customize ()
   (custom-set-variables
-   '(minitest-default-env "SHOW_DOTS=1"))))
+   '(minitest-default-env "SHOW_DOTS=1")))
 
 (defun shopify-create ()
   (let* ((string ""))
