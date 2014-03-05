@@ -1,3 +1,4 @@
+(require 'cl)
 ;; Remove bars first thing
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -12,29 +13,20 @@
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/init.d"))
 
-;; Default requires
-(mapcar 'require
-	'(cl
-	  saveplace
-	  ffap
-	  uniquify
-	  ansi-color))
-
 ;; Custom libs
-(require 'growl)
-(require 'idomenu)
+(autoload 'growl "growl" t)
+(autoload 'idomenu "idomenu" t)
 
 ;; Setup stuff
-(mapcar 'require
-        '(01_packages
-	  setup-colors
-	  setup-tmux
-	  setup-ruby
-	  setup-go
-	  setup-etc
-	  setup-erc
-	  setup-bindings
-	  shopify-mode))
+(require '01_packages)
+(require 'setup-colors)
+(require 'setup-tmux)
+(require 'setup-ruby)
+(require 'setup-go)
+(require 'setup-etc)
+(autoload 'setup-erc "setup-erc" t)
+(require 'setup-bindings)
+(autoload 'shopify-mode "shopify-mode" t)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir (symbol-name system-type) ".el"))

@@ -40,8 +40,7 @@
   (interactive)
   (erc-tls :server "irc.flowdock.com" :port 6697 :nick "arthurnn"))
 
-
-;; start ZNC + IRC
+;;;###autoload
 (defun start-irc ()
   (interactive)
   (config-znc)
