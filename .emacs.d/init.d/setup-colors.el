@@ -1,4 +1,4 @@
 ;; Colors ;;
-(load-theme 'solarized-dark t)
+(load-theme 'zenburn t)
 
 (provide 'setup-colors)

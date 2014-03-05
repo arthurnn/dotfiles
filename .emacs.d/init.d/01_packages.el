@@ -8,7 +8,7 @@
                       ; Misc modes
                       go-mode markdown-mode ido-ubiquitous znc
                       ;Themes
-                      color-theme color-theme-solarized
+                      color-theme color-theme-solarized zenburn-theme
                       ;Ruby
                       ruby-mode inf-ruby ruby-block ruby-end
 		      rubocop rspec-mode minitest yaml-mode haml-mode
