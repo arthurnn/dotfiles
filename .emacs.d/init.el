@@ -26,7 +26,8 @@
 (require 'setup-etc)
 (autoload 'setup-erc "setup-erc" t)
 (require 'setup-bindings)
-(autoload 'shopify-mode "shopify-mode" t)
+;;(autoload 'shopify-mode "shopify-mode" t)
+(require 'shopify-mode)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir (symbol-name system-type) ".el"))
