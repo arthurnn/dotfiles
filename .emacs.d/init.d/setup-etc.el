@@ -27,6 +27,23 @@
   kept-new-versions 20   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
 )
+
+(defun make-backup-current-file ()
+  "Make a backup copy of current file.
+
+The backup file name has the form 「‹name›~‹timestamp›~」, in the same dir. If such a file already exist, it's overwritten.
+If the current buffer is not associated with a file, do nothing."
+  (interactive)
+  (let ((currentFileName (buffer-file-name)) backupFileName)
+    (if (file-exists-p currentFileName)
+        (progn
+          (setq backupFileName (concat currentFileName "~" (format-time-string "%Y%m%d_%H%M%S") "~"))
+          (copy-file currentFileName backupFileName t)
+          (message (concat "Backup saved as: " (file-name-nondirectory backupFileName)))
+          )
+      (progn ; file doesn't exist happens when it's new file not yet saved.
+        (message (format "file 「%s」 doesn't exist." currentFileName)) ) ) ) )
+
 ;; turn off recentf
 (recentf-mode -1)
 
