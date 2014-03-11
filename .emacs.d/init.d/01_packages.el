@@ -4,7 +4,7 @@
 ;; List of packages
 (defvar my-packages '(
                       ;Git
-                      magit mo-git-blame gist
+                      magit gist
                       ; Misc modes
                       go-mode markdown-mode ido-ubiquitous znc
                       ;Themes
