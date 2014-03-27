@@ -5,6 +5,7 @@ fi
 # git alias
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
 alias egit='emacs $(git ls-files -m)'
+alias gsign='git commit -C HEAD -S --amend'
 
 # terminal configs
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
