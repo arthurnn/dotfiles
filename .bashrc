@@ -44,3 +44,4 @@ else
     eval `gpg-agent --daemon`
     echo $GPG_AGENT_INFO > $HOME/.gpg-agent-info
 fi
+export GPG_TTY=`tty`
