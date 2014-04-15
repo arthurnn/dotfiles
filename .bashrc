@@ -10,6 +10,7 @@ alias gsign='git commit -C HEAD -S --amend'
 # terminal configs
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
 export TERM="xterm-256color"
+alias reset-color="echo -e \"\e[39m\""
 
 # Cask
 export PATH=$PATH:$HOME/.cask/bin
