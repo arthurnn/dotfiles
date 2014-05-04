@@ -28,6 +28,7 @@
 (require 'setup-bindings)
 ;;(autoload 'shopify-mode "shopify-mode" t)
 (require 'shopify-mode)
+(require 'pygmentize)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir (symbol-name system-type) ".el"))
