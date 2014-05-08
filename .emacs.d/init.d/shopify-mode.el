@@ -26,7 +26,7 @@
 
       (define-key map (kbd "C-c") prefix-map))
     map)
-  "Keymap for RuboCop mode.")
+  "Keymap for Shopify mode.")
 
 ;;;###autoload
 (defun shopify-buffer-is-shopify-p ()
