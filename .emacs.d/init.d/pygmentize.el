@@ -1,3 +1,14 @@
+;;; pygmentize.el --- An Emacs set of functions to use pygmentize within emacs
+
+;; Copyright © 2014 Arthur Nogueira Neves
+
+;; Author: Arthur Neves
+;; URL:
+;; Version: 0.0.1
+
+;; This file is NOT part of GNU Emacs.
+
+;;; Code:
 
 (defun pygmentize ()
   (interactive)
