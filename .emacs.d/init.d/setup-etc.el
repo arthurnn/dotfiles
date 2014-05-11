@@ -125,4 +125,7 @@ If the current buffer is not associated with a file, do nothing."
 (add-hook 'php-mode-hook 'xah-syntax-color-hex)
 (add-hook 'html-mode-hook 'xah-syntax-color-hex)
 
+;; Scratch
+(setq initial-scratch-message nil)
+
 (provide 'setup-etc)
