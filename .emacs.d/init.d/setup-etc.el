@@ -70,27 +70,11 @@ If the current buffer is not associated with a file, do nothing."
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
 
-;; ido-mode is like magic pixie dust!
-(ido-mode t)
-(ido-ubiquitous-mode)
-(setq ido-enable-prefix nil
-      ido-enable-flex-matching t
-      ido-auto-merge-work-directories-length nil
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point 'guess
-      ido-use-virtual-buffers t
-      ido-handle-duplicate-virtual-buffers 2
-      ido-max-prospects 10)
-;; ido mode on M-x
-(global-set-key
- "\M-x"
- (lambda ()
-   (interactive)
-   (call-interactively
-    (intern
-     (ido-completing-read
-      "M-x "
-      (all-completions "" obarray 'commandp))))))
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
 
 ;; Modes for file extensions
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))

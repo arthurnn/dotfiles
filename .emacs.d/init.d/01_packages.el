@@ -6,7 +6,8 @@
                       ;Git
                       magit gist
                       ; Misc modes
-                      go-mode markdown-mode ido-ubiquitous znc
+		      go-mode markdown-mode znc
+		      flx-ido
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
