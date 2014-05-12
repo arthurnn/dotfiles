@@ -47,3 +47,8 @@ else
     echo $GPG_AGENT_INFO > $HOME/.gpg-agent-info
 fi
 export GPG_TTY=`tty`
+
+# Vagrant working folder
+if [ -d /home/vagrant/src/shopify ]; then
+    cd /home/vagrant/src/shopify
+fi
