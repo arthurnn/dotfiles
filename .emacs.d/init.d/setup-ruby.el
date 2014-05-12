@@ -1,3 +1,6 @@
+;; add projectile on rails
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+
 ;; add rubocop - Ruby static code analyzer
 (add-hook 'ruby-mode-hook 'rubocop-mode)
 

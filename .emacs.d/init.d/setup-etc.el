@@ -1,3 +1,6 @@
+;; Projectile mode
+(projectile-global-mode)
+
 ;; Frame title show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
@@ -92,6 +95,8 @@ If the current buffer is not associated with a file, do nothing."
  '(add-log-full-name "Arthur Neves")
  '(add-log-mailing-address "arthurnn@gmail.com")
  '(change-log-default-name "CHANGELOG.md")
+ ;; projectile
+ '(projectile-use-git-grep t)
 )
 
 (defun xah-syntax-color-hex ()
