@@ -19,10 +19,6 @@ export PATH=$PATH:$HOME/.cask/bin
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 
-# Shopify config
-export ZOOKEEPER_ENABLED=1
-alias shopify='cd ~/src/vagrant/; vagrant ssh'
-
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
@@ -48,7 +44,9 @@ else
 fi
 export GPG_TTY=`tty`
 
-# Vagrant working folder
+# Shopify config
+export ZOOKEEPER_ENABLED=1
+alias shopify='cd ~/src/vagrant/; vagrant ssh'
 if [ -d /home/vagrant/src/shopify ]; then
     cd /home/vagrant/src/shopify
 fi
