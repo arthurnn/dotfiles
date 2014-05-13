@@ -29,9 +29,9 @@
 (require 'pygmentize)
 
 ;; SETTINGS (SYSTEM)
-(setq system-type-config (concat dotfiles-dir (symbol-name system-type) ".el"))
+(setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
 (if (file-exists-p system-type-config) (load system-type-config))
 
 (setq host-name (substring (system-name) 0 (string-match "\\." (system-name))))
-(setq host-name-config (concat dotfiles-dir host-name ".el"))
+(setq host-name-config (concat dotfiles-dir "init.d/" host-name ".el"))
 (if (file-exists-p host-name-config) (load host-name-config))
