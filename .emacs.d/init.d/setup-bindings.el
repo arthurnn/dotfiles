@@ -5,6 +5,10 @@
 (define-key input-decode-map "\e[1;2A" [S-up])
 (if (equal "xterm" (tty-type)) (define-key input-decode-map "\e[1;2A" [S-up]))
 
+;; Navigation
+(global-set-key (kbd "M-]")      'forward-paragraph)
+(global-set-key (kbd "M-[")      'backward-paragraph)
+
 ;; SWITCH WINDOWS
 (windmove-default-keybindings)
 (global-set-key [M-up]      'windmove-up)
