@@ -4,7 +4,6 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 # git alias
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
-alias egit='emacs $(git ls-files -m)'
 alias gsign='git commit -C HEAD -S --amend'
 
 # terminal configs
@@ -36,6 +35,7 @@ genpasswd() {
 
 # emacs
 alias e='emacsclient -t -a ""'
+alias egit='e $(git ls-files -m)'
 
 # GPG
 if test -f $HOME/.gpg-agent-info && kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
