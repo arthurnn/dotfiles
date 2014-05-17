@@ -34,6 +34,9 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
+# emacs
+alias e='emacsclient -t -a ""'
+
 # GPG
 if test -f $HOME/.gpg-agent-info && kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
     GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info`
