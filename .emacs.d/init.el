@@ -23,7 +23,7 @@
 (require 'setup-ruby)
 (require 'setup-go)
 (require 'setup-etc)
-(autoload 'setup-erc "setup-erc" t)
+(require 'setup-erc)
 (require 'setup-bindings)
 (require 'shopify-mode)
 (require 'pygmentize)
