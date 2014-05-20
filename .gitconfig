@@ -11,7 +11,7 @@
 [core]
         excludesfile = ~/.gitignore
         whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = emacs
+	editor = emacsclient -t -a=\"\"
 [color "branch"]
        current = yellow reverse
        local = yellow
