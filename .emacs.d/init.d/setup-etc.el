@@ -96,8 +96,7 @@ If the current buffer is not associated with a file, do nothing."
  '(add-log-mailing-address "arthurnn@gmail.com")
  '(change-log-default-name "CHANGELOG.md")
  ;; projectile
- '(projectile-use-git-grep t)
-)
+ '(projectile-use-git-grep t))
 
 (defun xah-syntax-color-hex ()
 "Syntax color hex color spec such as 「#ff1100」 in current buffer."
