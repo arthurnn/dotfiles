@@ -73,11 +73,12 @@ If the current buffer is not associated with a file, do nothing."
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
 
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-use-faces nil)
+;; ido mode
+(ido-mode t)
+(ido-everywhere t)
+(flx-ido-mode t)
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil) ;; disable ido faces to see flx highlights.
 
 ;; Modes for file extensions
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
