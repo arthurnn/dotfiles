@@ -7,6 +7,7 @@
 
 ;; Navigation
 ;; SWITCH WINDOWS
+(windmove-default-keybindings)
 (global-set-key [M-up]      'windmove-up)
 (global-set-key [M-down]    'windmove-down)
 (global-set-key [M-left]    'windmove-left)
