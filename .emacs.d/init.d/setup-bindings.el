@@ -1,9 +1,13 @@
 ;; Bindings file
 
-;; FIX SHIFT-UP ?!
+;; FIX SHIFT-UP
 ;; from http://stackoverflow.com/questions/10871745/shift-up-arrow-doesnt-highlight-text-emacs-iterm2
+;; and http://lists.gnu.org/archive/html/help-gnu-emacs/2011-05/msg00211.html
 (define-key input-decode-map "\e[1;2A" [S-up])
-(if (equal "xterm" (tty-type)) (define-key input-decode-map "\e[1;2A" [S-up]))
+(if (equal "xterm" (tty-type))
+    (define-key input-decode-map "\e[1;2A" [S-up]))
+(defadvice terminal-init-xterm (after select-shift-up activate)
+  (define-key input-decode-map "\e[1;2A" [S-up]))
 
 ;; Navigation
 ;; SWITCH WINDOWS
