@@ -1,6 +1,3 @@
-;; Projectile mode
-(projectile-global-mode)
-
 ;; Frame title show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 (setq frame-title-format
