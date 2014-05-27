@@ -52,8 +52,11 @@ fi
 export GPG_TTY=`tty`
 
 # Shopify config
+alias shopify='cd ~/src/vagrant/; vagrant ssh'
 if [[ `hostname` = vagrant.myshopify.io ]]; then
     echo 'Welcome to Shopify...'
-    cd /home/vagrant/src/shopify
+    export ZOOKEEPER_ENABLED=1
     export PS1="\[\033[0;31m\]\u{\W}\[\033[00m\]$ "
+
+    cd /home/vagrant/src/shopify
 fi
