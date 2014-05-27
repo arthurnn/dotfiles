@@ -55,5 +55,5 @@ export GPG_TTY=`tty`
 if [[ `hostname` = vagrant.myshopify.io ]]; then
     echo 'Welcome to Shopify...'
     cd /home/vagrant/src/shopify
-    export PS1="\[\033[0;31m\]\u\{\W}\[\033[00m\]$ "
+    export PS1="\[\033[0;31m\]\u{\W}\[\033[00m\]$ "
 fi
