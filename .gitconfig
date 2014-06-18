@@ -33,3 +33,5 @@
 	default = simple
 [commit]
 	gpgsign = true
+[gc]
+        auto = 0
