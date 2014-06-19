@@ -41,4 +41,7 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c l") 'org-store-link)
+
 (provide 'setup-bindings)

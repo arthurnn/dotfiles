@@ -112,4 +112,8 @@ If the current buffer is not associated with a file, do nothing."
 ;; Scratch
 (setq initial-scratch-message nil)
 
+;; org-mode
+(setq org-agenda-files '("~/Dropbox/org"))
+(setq org-log-done t)
+
 (provide 'setup-etc)
