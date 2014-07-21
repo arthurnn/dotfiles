@@ -116,4 +116,10 @@ If the current buffer is not associated with a file, do nothing."
 (setq org-agenda-files '("~/Dropbox/org"))
 (setq org-log-done t)
 
+;; Monkey-patch git-link
+(eval-after-load "git-link"
+  '(defun git-link-new (link)
+     (kill-new link)
+     (message link)))
+
 (provide 'setup-etc)

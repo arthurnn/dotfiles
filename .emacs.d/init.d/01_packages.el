@@ -3,7 +3,7 @@
 ;; List of packages
 (defvar my-packages '(
                       ;Git
-                      magit gist
+                      magit gist git-link
                       ; Misc modes
 		      go-mode markdown-mode znc
 		      flx-ido grizzl
