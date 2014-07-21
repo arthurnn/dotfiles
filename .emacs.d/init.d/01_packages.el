@@ -1,5 +1,4 @@
-(when (< emacs-major-version 24)
-  (require 'package))
+(require 'package)
 
 ;; List of packages
 (defvar my-packages '(
@@ -7,7 +6,7 @@
                       magit gist
                       ; Misc modes
 		      go-mode markdown-mode znc
-		      flx-ido
+		      flx-ido grizzl
 		      projectile projectile-rails
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
@@ -20,8 +19,14 @@
 		      ; Misc
 )  "A list of packages to ensure are installed at launch.")
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
+;;(add-to-list 'package-archives
+;;             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
 (package-initialize)
 
