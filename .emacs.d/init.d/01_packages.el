@@ -4,7 +4,7 @@
 (defvar my-packages '(
                       ;Git
                       magit gist git-link
-                      ; Misc modes
+                      ;Misc modes
 		      go-mode markdown-mode znc
 		      flx-ido grizzl
 		      projectile projectile-rails
@@ -12,11 +12,11 @@
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
 		      inf-ruby ruby-block ruby-end
-		      rubocop rspec-mode minitest yaml-mode haml-mode
+		      rubocop rspec-mode minitest
 		      flymake-ruby rbenv
-                      ;JS
-                      js2-mode coffee-mode
-		      ; Misc
+		      yaml-mode haml-mode
+                      ;Web
+                      web-mode js2-mode coffee-mode
 )  "A list of packages to ensure are installed at launch.")
 
 
