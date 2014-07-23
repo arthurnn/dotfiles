@@ -95,7 +95,7 @@ If the current buffer is not associated with a file, do nothing."
 
 ;; custom vars
 (custom-set-variables
- '(coffee-tab-width 4)
+ '(coffee-tab-width 2)
  '(css-indent-offset 2)
  ;; changelog vars
  '(add-log-full-name "Arthur Neves")
