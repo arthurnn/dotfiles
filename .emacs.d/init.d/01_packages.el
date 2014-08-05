@@ -8,6 +8,7 @@
 		      go-mode markdown-mode znc
 		      flx-ido grizzl
 		      projectile projectile-rails
+		      pushbullet
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
