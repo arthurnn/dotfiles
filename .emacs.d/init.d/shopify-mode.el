@@ -1,9 +1,3 @@
-
-(defun shopify-whitespaces-and-save ()
-  (interactive)
-  (delete-trailing-whitespace)
-  (save-buffer))
-
 (defun shopify-customize ()
   (custom-set-variables
    '(minitest-default-env "SHOW_DOTS=1")))
@@ -13,7 +7,6 @@
     (rspec-mode -1)
     (rspec-verifiable-mode -1)
     (minitest-mode)
-    (turn-off-delete-trailing-whitespace)
     (shopify-customize)
     (concat "Shopify"
             " 🍺  ")))
@@ -22,8 +15,6 @@
 (defvar shopify-mode-map
   (let ((map (make-sparse-keymap)))
     (let ((prefix-map (make-sparse-keymap)))
-      (define-key prefix-map (kbd "w") 'shopify-whitespaces-and-save)
-
       (define-key map (kbd "C-c") prefix-map))
     map)
   "Keymap for Shopify mode.")
