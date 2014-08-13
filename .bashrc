@@ -1,6 +1,10 @@
 # Custom Prompt
-#export PS1="\[\033[01;32m\]\u\[\033[01;34m\]\$ \[\033[00m\]" # used to be "\h:\W \u\$ "
-export PS1="\[\033[01;32m\]\u\[\033[01;34m\]{\W}\[\033[00m\]$ "
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    export PS1="\[\033[0;31m\]\u{\W}\[\033[00m\]$ "
+else
+    #export PS1="\[\033[01;32m\]\u\[\033[01;34m\]\$ \[\033[00m\]" # used to be "\h:\W \u\$ "
+    export PS1="\[\033[01;32m\]\u\[\033[01;34m\]{\W}\[\033[00m\]$ "
+fi
 
 # git
 if [ -f ~/.git-completion.bash ]; then
@@ -52,7 +56,6 @@ alias shopify='cd ~/src/vagrant/; vagrant ssh'
 if [[ `hostname` = vagrant.myshopify.io ]]; then
     echo 'Welcome to Shopify...'
     export ZOOKEEPER_ENABLED=1
-    export PS1="\[\033[0;31m\]\u{\W}\[\033[00m\]$ "
 
     cd /home/vagrant/src/shopify
 fi
