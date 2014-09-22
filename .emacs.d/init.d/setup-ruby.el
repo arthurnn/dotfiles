@@ -28,6 +28,14 @@
 ;; add a alias, otherwise gist wont open ruby files
 (defalias 'inf-ruby-keys 'inf-ruby-setup-keybindings)
 
+(defun ruby-erb-t ()
+  "Called when interpolation key is pressed"
+  (interactive)
+  (insert "<%=t '' %>")
+  (backward-char 4)
+)
+(global-set-key (kbd "C-c r t") 'ruby-erb-t)
+
 (defun ruby-interpolation-insert ()
   "Called when interpolation key is pressed"
   (interactive)
