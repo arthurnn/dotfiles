@@ -1,9 +1,8 @@
 # Custom Prompt
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    export PS1="\[\033[0;31m\]\u{\W}\[\033[00m\]$ "
+    export PS1='\[\e[0;31m\][\u@\h \W]\$\[\e[0m\] '
 else
-    #export PS1="\[\033[01;32m\]\u\[\033[01;34m\]\$ \[\033[00m\]" # used to be "\h:\W \u\$ "
-    export PS1="\[\033[01;32m\]\u\[\033[01;34m\]{\W}\[\033[00m\]$ "
+    export PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 fi
 
 # git
