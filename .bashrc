@@ -50,6 +50,9 @@ alias egit='e $(git ls-files -m)'
 # GPG
 export GPG_TTY=`tty`
 
+# Cuda
+export PATH=$PATH:/usr/local/cuda/bin
+
 # Shopify config
 alias shopify='cd ~/src/vagrant/; vagrant ssh'
 if [[ `hostname` = vagrant.myshopify.io ]]; then
