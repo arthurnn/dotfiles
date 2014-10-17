@@ -1,3 +1,5 @@
+export PATH=/usr/local/sbin:$PATH
+
 # Custom Prompt
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     export PS1='\[\e[0;31m\][\u@\h \W]\$\[\e[0m\] '
