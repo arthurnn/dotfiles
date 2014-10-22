@@ -34,6 +34,7 @@ export PATH=$PATH:$GOPATH/bin
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 # rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if [ -f ~/.rbenv/completions/rbenv.bash ]; then
   source ~/.rbenv/completions/rbenv.bash
