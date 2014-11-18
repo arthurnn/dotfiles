@@ -70,6 +70,9 @@ If the current buffer is not associated with a file, do nothing."
 (setq markdown-command "rdiscount")
 (add-hook 'markdown-mode-hook 'turn-off-delete-trailing-whitespace)
 
+;; turnoff encoding magic
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; ido mode
 (ido-mode t)
 (ido-everywhere t)
