@@ -124,8 +124,10 @@ If the current buffer is not associated with a file, do nothing."
 (setq initial-scratch-message nil)
 
 ;; org-mode
+(setq org-directory "~/Dropbox/org")
 (setq org-agenda-files '("~/Dropbox/org"))
-(setq org-log-done t)
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/inbox.org")
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
 ;; Monkey-patch git-link
 (eval-after-load "git-link"
