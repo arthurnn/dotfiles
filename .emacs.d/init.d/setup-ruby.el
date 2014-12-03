@@ -66,4 +66,10 @@
 ;; Avoid conflicts with rspec-mode
 (add-hook 'minitest-mode-hook (lambda () (rspec-verifiable-mode -1)))
 
+;; Install snippets
+(eval-after-load 'rspec-mode
+  '(rspec-install-snippets))
+(eval-after-load 'minitest
+  '(minitest-install-snippets))
+
 (provide 'setup-ruby)
