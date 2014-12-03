@@ -57,7 +57,7 @@ export GPG_TTY=`tty`
 export PATH=$PATH:/usr/local/cuda/bin
 
 # Shopify config
-alias shopify='mosh vagrant@192.168.211.38'
+alias shopify='cd ~/src/vagrant/; vagrant ssh'
 if [[ `hostname` = vagrant.myshopify.io ]]; then
     echo 'Welcome to Shopify...'
     export ZOOKEEPER_ENABLED=1
