@@ -9,6 +9,7 @@
 		      flx-ido grizzl
 		      projectile projectile-rails
 		      pushbullet ag
+		      yasnippets
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby

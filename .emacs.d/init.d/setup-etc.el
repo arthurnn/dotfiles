@@ -135,4 +135,10 @@ If the current buffer is not associated with a file, do nothing."
      (kill-new link)
      (message link)))
 
+;; yasnippet config
+(require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-global-mode 1)
+
+
 (provide 'setup-etc)
