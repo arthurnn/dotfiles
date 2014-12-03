@@ -63,4 +63,7 @@
  '(rspec-use-zeus-when-possible t)
 )
 
+;; Avoid conflicts with rspec-mode
+(add-hook 'minitest-mode-hook (lambda () (rspec-verifiable-mode -1)))
+
 (provide 'setup-ruby)
