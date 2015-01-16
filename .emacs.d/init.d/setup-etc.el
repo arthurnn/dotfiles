@@ -96,11 +96,14 @@ If the current buffer is not associated with a file, do nothing."
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+
 ;; custom vars
 (custom-set-variables
  '(coffee-tab-width 2)
  '(css-indent-offset 2)
- ;; changelog vars
+ '(web-mode-markup-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-code-indent-offset 2)                                                                                                                                  ;; changelog vars
  '(add-log-full-name "Arthur Neves")
  '(add-log-mailing-address "arthurnn@gmail.com")
  '(change-log-default-name "CHANGELOG.md"))
