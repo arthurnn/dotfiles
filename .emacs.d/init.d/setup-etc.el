@@ -17,7 +17,13 @@
     (remove-hook 'before-save-hook 'delete-trailing-whitespace))
 (setq-default whitespace-style (quote
   (face spaces tabs newline space-mark tab-mark newline-mark)))
+
+;; Show trailing white spaces
 (setq-default show-trailing-whitespace t)
+;; Show tabs
+(standard-display-ascii ?\t "^I")
+;; Disable tabs as indentation
+(setq-default indent-tabs-mode nil)
 
 ;; send backup files to its own dir
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
