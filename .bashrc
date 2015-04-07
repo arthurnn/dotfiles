@@ -58,7 +58,3 @@ export PATH=$PATH:/usr/local/cuda/bin
 
 # Shopify config
 alias shopify='cd ~/src/vagrant/; if ! vagrant ssh 2>/dev/null; then vagrant up; vagrant ssh; fi'
-if [[ `hostname` = vagrant.myshopify.io ]]; then
-    export ZOOKEEPER_ENABLED=1
-    cd /home/vagrant/src/shopify
-fi
