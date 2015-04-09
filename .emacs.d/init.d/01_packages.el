@@ -20,7 +20,6 @@
                       web-mode js2-mode coffee-mode web-beautify
 )  "A list of packages to ensure are installed at launch.")
 
-
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (when (< emacs-major-version 24)

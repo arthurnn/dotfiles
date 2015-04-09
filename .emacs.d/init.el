@@ -11,6 +11,7 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path (concat dotfiles-dir "/init.d"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
 ;; Custom libs
 (autoload 'growl "growl" t)
@@ -28,6 +29,7 @@
 (require 'setup-projectile)
 (require 'shopify-mode)
 (require 'pygmentize)
+(require 'bundler)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
