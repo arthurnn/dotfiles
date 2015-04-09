@@ -37,8 +37,7 @@
 (setq host-name-config (concat dotfiles-dir "init.d/" host-name ".el"))
 (if (file-exists-p host-name-config) (load host-name-config))
 
-(defun wg/kludge-gpg-agent
-    ()
+(defun wg/kludge-gpg-agent ()
   (if
       (display-graphic-p)
       (setenv "DISPLAY"
