@@ -5,18 +5,17 @@
                       ;Git
                       magit gist git-link
                       ;Misc modes
-		      go-mode markdown-mode znc
-		      flx-ido grizzl
-		      projectile projectile-rails
-		      pushbullet ag
-		      yasnippet
+                      go-mode markdown-mode znc
+                      flx-ido grizzl
+                      projectile projectile-rails
+                      ag yasnippet
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
-		      inf-ruby ruby-block ruby-end
-		      rubocop rspec-mode minitest
-		      flymake-ruby rbenv
-		      yaml-mode haml-mode
+                      inf-ruby ruby-block ruby-end
+                      rubocop rspec-mode minitest
+                      flymake-ruby rbenv
+                      yaml-mode haml-mode
                       ;Web
                       web-mode js2-mode coffee-mode web-beautify
 )  "A list of packages to ensure are installed at launch.")
