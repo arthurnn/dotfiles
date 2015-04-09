@@ -48,9 +48,7 @@
 
 (eval-after-load 'ruby-mode
   '(progn
-     (define-key ruby-mode-map (kbd "#") 'ruby-interpolation-insert)
-     (define-key ruby-mode-map (kbd "C-c b")
-       (lambda () (interactive) (async-shell-command "bundle install" "**Bundler**")))))
+     (define-key ruby-mode-map (kbd "#") 'ruby-interpolation-insert)))
 
 (defun rails-test-ar-conn(db)
   (interactive
