@@ -12,7 +12,7 @@
 (add-to-list 'projectile-globally-ignored-directories "node_modules")
 
 (setq projectile-use-git-grep t)
-;;(setq projectile-enable-caching t) ;; THIS DOESNT WORK !
+(setq projectile-enable-caching t)
 (setq projectile-completion-system 'grizzl)
 
 (provide 'setup-projectile)
