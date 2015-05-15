@@ -1,5 +1,8 @@
 (projectile-global-mode t)
 
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
 (setq projectile-cache-file (concat dotfiles-dir "projectile.cache"))
 (setq projectile-known-projects-file (concat dotfiles-dir "projectile-bookmarks.eld"))
 (setq projectile-indexing-method 'alien)
