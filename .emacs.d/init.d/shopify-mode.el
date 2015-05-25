@@ -1,3 +1,11 @@
+(defun rails42-enable ()
+  (interactive)
+  (progn (setenv "RAILS42" "1") (bundle-command "bundle update rails rack")))
+
+(defun rails42-disable ()
+  (interactive)
+  (progn (setenv "RAILS42") (bundle-command "bundle update rails rack")))
+
 (defun shopify-customize ()
   (custom-set-variables
    '(minitest-default-env "SHOW_DOTS=1")))
