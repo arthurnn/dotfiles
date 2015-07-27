@@ -7,7 +7,8 @@
                       ;Misc modes
                       go-mode markdown-mode znc
                       flx-ido grizzl
-                      projectile projectile-rails helm helm-projectile
+                      ;; projectile projectile-rails helm helm-projectile
+                      helm helm-ls-git
                       ag yasnippet
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme

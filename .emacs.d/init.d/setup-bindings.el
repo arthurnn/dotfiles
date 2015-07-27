@@ -29,7 +29,6 @@
 
 ;; git status
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x C-g") 'projectile-grep)
 
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)

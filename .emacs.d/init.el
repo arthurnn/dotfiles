@@ -26,7 +26,7 @@
 (require 'setup-etc)
 (require 'setup-erc)
 (require 'setup-bindings)
-(require 'setup-projectile)
+(require 'setup-helm)
 (require 'shopify-mode)
 (require 'pygmentize)
 (require 'bundler)
