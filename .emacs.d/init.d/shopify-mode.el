@@ -1,10 +1,10 @@
 (defun rails42-enable ()
   (interactive)
-  (progn (setenv "RAILS42" "1") (bundle-command "bundle update rails rack")))
+  (setenv "RAILS42" "1"))
 
 (defun rails42-disable ()
   (interactive)
-  (progn (setenv "RAILS42") (bundle-command "bundle update rails rack")))
+  (setenv "RAILS42"))
 
 (defun shopify-customize ()
   (custom-set-variables
