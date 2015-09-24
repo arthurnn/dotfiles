@@ -5,12 +5,6 @@
                                           (abbreviate-file-name (buffer-file-name))
                                         "%b"))))
 
-;; Git mode
-(eval-after-load 'magit
-  '(progn
-     (set-face-foreground 'magit-diff-add "green3")
-     (set-face-foreground 'magit-diff-del "red3")))
-
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (defun turn-off-delete-trailing-whitespace ()
