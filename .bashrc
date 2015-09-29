@@ -58,6 +58,3 @@ export PATH=$PATH:/usr/local/cuda/bin
 
 # Docker
 eval `boot2docker shellinit 2>/dev/null`
-
-# Shopify config
-alias shopify='cd ~/src/vagrant/; if ! vagrant ssh 2>/dev/null; then vagrant up; vagrant ssh; fi'
