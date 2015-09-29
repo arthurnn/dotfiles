@@ -58,3 +58,10 @@ export PATH=$PATH:/usr/local/cuda/bin
 
 # Docker
 eval `boot2docker shellinit 2>/dev/null`
+
+# Better history, things like, append the history to other tabs
+shopt -s histappend
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export HISTCONTROL=ignoredups:erasedups
+export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
