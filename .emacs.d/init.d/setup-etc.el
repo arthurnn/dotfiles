@@ -143,5 +143,18 @@ If the current buffer is not associated with a file, do nothing."
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
+(defun volatile-kill-buffer ()
+  "Kill current buffer unconditionally."
+  (interactive)
+  (let ((buffer-modified-p nil))
+    (kill-buffer (current-buffer))))
+
+(defun save-and-kill ()
+  (interactive)
+  (save-buffer)
+  (volatile-kill-buffer))
+
+(global-set-key (kbd "C-c C-n") 'save-and-kill)
+
 
 (provide 'setup-etc)

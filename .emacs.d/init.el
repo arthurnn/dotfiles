@@ -20,7 +20,6 @@
 ;; Setup stuff
 (require '01_packages)
 (require 'setup-colors)
-(require 'setup-tmux)
 (require 'setup-ruby)
 (require 'setup-go)
 (require 'setup-etc)
