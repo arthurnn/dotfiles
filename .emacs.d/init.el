@@ -26,7 +26,7 @@
 (require 'setup-erc)
 (require 'setup-bindings)
 (require 'setup-helm)
-(require 'shopify-mode)
+(require 'github-mode)
 (require 'pygmentize)
 (require 'bundler)
 (require 'rspec-mode)
