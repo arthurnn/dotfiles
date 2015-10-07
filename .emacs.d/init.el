@@ -29,6 +29,7 @@
 (require 'shopify-mode)
 (require 'pygmentize)
 (require 'bundler)
+(require 'rspec-mode)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
