@@ -22,23 +22,6 @@
      message)))
 (add-hook 'erc-text-matched-hook 'my-erc-hook)
 
-;;(defun ted-erc-growl ()
-;;  "Use growl for ERC track change notifications."
-;;  (let* ((buffers (mapcar 'car erc-modified-channels-alist))
-;;         (counts (mapcar 'cadr erc-modified-channels-alist))
-;;         (faces (mapcar 'cddr erc-modified-channels-alist))
-;;         (channels-list (mapcar #'(lambda (buf)
-;;                                 (or (buffer-name buf) ""))
-;;                             buffers)))
-;;    (when (member "#mongoid" channels-list)
-;;      (growl "IRC Activity" "New message on #mongoid"))))
-;;(add-hook 'erc-track-list-changed-hook 'ted-erc-growl)
-
-;; Flowdock
-(defun flowdock ()
-  (interactive)
-  (erc-tls :server "irc.flowdock.com" :port 6697 :nick "arthurnn"))
-
 ;;;###autoload
 (defun start-irc ()
   (interactive)
