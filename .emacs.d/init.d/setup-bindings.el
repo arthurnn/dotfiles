@@ -30,6 +30,14 @@
 ;; git status
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; git grep
+(global-set-key (kbd "C-x C-g") 'helm-git-grep)
+;; Invoke `helm-git-grep' from isearch.
+(define-key isearch-mode-map (kbd "C-x C-g") 'helm-git-grep-from-isearch)
+;; Invoke `helm-git-grep' from other helm.
+(eval-after-load 'helm
+    '(define-key helm-map (kbd "C-x C-g") 'helm-git-grep-from-helm))
+
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
 ;; Start a new eshell even if one is active.

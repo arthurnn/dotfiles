@@ -7,7 +7,7 @@
                       ;Misc modes
                       go-mode markdown-mode znc
                       flx-ido grizzl
-                      helm
+                      helm helm-git-grep
                       ag yasnippet
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
