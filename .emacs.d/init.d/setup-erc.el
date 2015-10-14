@@ -2,7 +2,7 @@
 
 ;; Freenode.
 (setq erc-keywords '("@arthurnn" "@all" "@everyone"))
-(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "#rubyonrails" "#ruby")))
+(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "#RubyOnRails" "#ruby")))
 
 (erc-track-mode t)
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
