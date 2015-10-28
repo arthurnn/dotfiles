@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ActiveRecord logger
+# key: ar_log
+# binding: direct-keybinding
+# --
+logger = Logger.new STDOUT
+logger.level = 0
+oldl, ActiveRecord::Base.logger = ActiveRecord::Base.logger, logger
+$0
+ActiveRecord::Base.logger = oldl
