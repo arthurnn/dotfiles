@@ -55,4 +55,10 @@
 (global-set-key (kbd "C-c b i") 'bundle-install)
 (global-set-key (kbd "C-c b o") 'bundle-open)
 
+;; atreus bindings
+(global-set-key (kbd "C-x '") 'delete-other-windows)
+(global-set-key (kbd "C-x ,") 'split-window-below)
+(global-set-key (kbd "C-x .") 'split-window-right)
+(global-set-key (kbd "C-x l") 'delete-window)
+
 (provide 'setup-bindings)
