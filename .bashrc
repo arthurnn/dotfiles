@@ -27,7 +27,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$PATH:$HOME/.cask/bin
 
 # Go
-export GOPATH=$HOME/dev/go
+export GOPATH=$HOME/src/gobox
 export PATH=$PATH:$GOPATH/bin
 
 # Vagrant
