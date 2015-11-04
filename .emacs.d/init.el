@@ -30,6 +30,7 @@
 (require 'pygmentize)
 (require 'bundler)
 (require 'rspec-mode)
+(require 'atreus)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
