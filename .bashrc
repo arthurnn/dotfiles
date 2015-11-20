@@ -37,9 +37,6 @@ if [ -n "$BASH_VERSION" ] && [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]
     source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
-# Vagrant
-export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
-
 genpasswd() {
     local l=$1
     [ "$l" == "" ] && l=16
