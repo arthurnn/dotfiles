@@ -14,7 +14,7 @@
                       ;Ruby
                       inf-ruby ruby-block ruby-end
                       rubocop minitest
-                      flymake-ruby rbenv
+                      flymake-ruby
                       yaml-mode haml-mode
                       ;Web
                       web-mode js2-mode coffee-mode web-beautify
