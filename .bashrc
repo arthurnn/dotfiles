@@ -30,6 +30,13 @@ export PATH=$PATH:$HOME/.cask/bin
 export GOPATH=$HOME/src/gobox
 export PATH=$PATH:$GOPATH/bin
 
+# chruby
+if [ -n "$BASH_VERSION" ] && [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
+    RUBIES+=(~/.rbenv/versions/*)
+    source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
