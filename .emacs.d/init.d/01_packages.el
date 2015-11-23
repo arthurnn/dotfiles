@@ -8,7 +8,7 @@
                       go-mode markdown-mode znc
                       flx-ido grizzl
                       helm helm-git-grep
-                      ag yasnippet paredit
+                      ag yasnippet
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
