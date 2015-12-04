@@ -50,9 +50,6 @@ alias egit='e $(git ls-files -m)'
 # GPG
 export GPG_TTY=`tty`
 
-# Cuda
-export PATH=$PATH:/usr/local/cuda/bin
-
 # Docker
 eval `boot2docker shellinit 2>/dev/null`
 
