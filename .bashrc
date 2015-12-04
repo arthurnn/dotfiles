@@ -1,4 +1,7 @@
 export PATH=/usr/local/sbin:$PATH
+if [ -d "$HOME/.bin" ] ; then
+    export PATH="$HOME/.bin:$PATH"
+fi
 
 # Custom Prompt
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
