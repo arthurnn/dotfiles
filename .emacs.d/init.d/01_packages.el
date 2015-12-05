@@ -8,11 +8,11 @@
                       go-mode markdown-mode znc
                       flx-ido grizzl
                       helm helm-git-grep
-                      ag yasnippet smartparens
+                      ag yasnippet
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
-                      inf-ruby ruby-block
+                      inf-ruby ruby-block ruby-end
                       rubocop minitest
                       flymake-ruby
                       yaml-mode haml-mode
