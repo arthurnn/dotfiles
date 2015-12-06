@@ -61,8 +61,13 @@
  '(rspec-use-zeus-when-possible t)
 )
 
+(add-hook 'ruby-mode-hook 'minitest-mode)
 ;; Avoid conflicts with rspec-mode
 (add-hook 'minitest-mode-hook (lambda () (rspec-verifiable-mode -1)))
+
+(setq safe-local-variable-values
+      '((minitest-use-bundler . nil)
+        (minitest-default-command . ("bin/testrb"))))
 
 ;; Install snippets
 (eval-after-load 'minitest
