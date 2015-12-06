@@ -1,7 +1,6 @@
 (defun github--customize ()
-  (custom-set-variables
-   '(minitest-use-bundler nil)
-   '(minitest-default-command '("bin/testrb"))))
+  (setq 'minitest-use-bundler nil)
+  (setq 'minitest-default-command '("bin/testrb")))
 
 (add-hook 'ruby-mode-hook 'minitest-mode)
 
@@ -38,12 +37,15 @@
         (minitest-mode 1)
         (github--customize)
         (message "Github enabled"))
-    (setcar mode-line-position github-old-car-mode-line-position)))
+    (progn
+      (setcar mode-line-position github-old-car-mode-line-position)
+      )))
 
 ;;;###autoload
 (defun enable-github-mode ()
   (if (github--buffer-is-github-p)
-      (github-mode)))
+      (github-mode)
+    (github-mode 0)))
 
 ;;;###autoload
 (add-hook 'ruby-mode-hook 'enable-github-mode)
