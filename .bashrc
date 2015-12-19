@@ -49,6 +49,7 @@ genpasswd() {
 # emacs
 alias e='emacsclient -t -a ""'
 alias egit='e $(git ls-files -m)'
+export PATH=/usr/local/Emacs/bin:$PATH
 
 # GPG
 export GPG_TTY=`tty`
