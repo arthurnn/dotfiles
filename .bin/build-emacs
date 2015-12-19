@@ -1,0 +1,8 @@
+#!/bin/sh
+
+./autogen.sh
+./configure --prefix=/usr/local/Emacs --with-modules --without-ns || exit
+
+make clean || exit
+make -j4 || exit
+make -j2 install || exit
