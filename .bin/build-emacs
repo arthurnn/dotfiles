@@ -6,3 +6,5 @@
 make clean || exit
 make -j4 || exit
 make -j2 install || exit
+
+echo "Build finished."
