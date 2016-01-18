@@ -19,7 +19,7 @@ alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C
 alias gsign='git commit -C HEAD -S --amend'
 
 # terminal configs
-export ALTERNATE_EDITOR=emacs EDITOR=e VISUAL=e
+export ALTERNATE_EDITOR=emacs EDITOR=emacs VISUAL=emacs
 export TERM="xterm-256color"
 alias reset-color="echo -e \"\e[39m\""
 
