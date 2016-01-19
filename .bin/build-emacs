@@ -8,7 +8,7 @@ fi
 prefix="/usr/local/Emacs"
 mkdir $prefix
 
-./configure --prefix="$prefix" --with-modules --with-ns || exit
+./configure --prefix="$prefix" --with-modules --with-ns --disable-ns-self-contained || exit
 
 make clean || exit
 make -j4 || exit
