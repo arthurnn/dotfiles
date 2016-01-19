@@ -5,7 +5,10 @@ if [ ! -f configure ]; then
     ./autogen.sh
 fi
 
-./configure --prefix=/usr/local/Emacs --with-modules --with-ns || exit
+prefix="/usr/local/Emacs"
+mkdir $prefix
+
+./configure --prefix="$prefix" --with-modules --with-ns || exit
 
 make clean || exit
 make -j4 || exit
@@ -13,11 +16,11 @@ make -j2 install || exit
 
 cp -r nextstep/Emacs.app /Applications/Emacs.app
 
-rm /usr/local/Emacs/bin/emacs
-cat <<EOF > /usr/local/Emacs/bin/emacs
+rm $prefix/bin/emacs
+cat <<EOF > $prefix/bin/emacs
 #!/bin/bash
 exec /Applications/Emacs.app/Contents/MacOS/Emacs -nw "\$@"
 EOF
-chmod a+x /usr/local/Emacs/bin/emacs
+chmod a+x $prefix/bin/emacs
 
 echo "Emacs build finished."
