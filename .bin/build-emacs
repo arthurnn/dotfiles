@@ -1,10 +1,23 @@
 #!/bin/sh
 
-./autogen.sh
-./configure --prefix=/usr/local/Emacs --with-modules --without-ns || exit
+if [ ! -f configure ]; then
+    echo "Autogening..."
+    ./autogen.sh
+fi
+
+./configure --prefix=/usr/local/Emacs --with-modules --with-ns || exit
 
 make clean || exit
 make -j4 || exit
 make -j2 install || exit
 
-echo "Build finished."
+cp -r nextstep/Emacs.app /Applications/Emacs.app
+
+rm /usr/local/Emacs/bin/emacs
+cat <<EOF > /usr/local/Emacs/bin/emacs
+#!/bin/bash
+exec /Applications/Emacs.app/Contents/MacOS/Emacs -nw "\$@"
+EOF
+chmod a+x /usr/local/Emacs/bin/emacs
+
+echo "Emacs build finished."
