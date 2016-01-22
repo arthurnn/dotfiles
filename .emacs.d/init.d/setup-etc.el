@@ -15,7 +15,7 @@
 ;; Show trailing white spaces
 (setq-default show-trailing-whitespace t)
 ;; Show tabs
-(standard-display-ascii ?\t "^I")
+;;(standard-display-ascii ?\t "^I")
 ;; Disable tabs as indentation
 (setq-default indent-tabs-mode nil)
 
