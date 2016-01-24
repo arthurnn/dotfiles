@@ -27,8 +27,6 @@
 (require 'setup-bindings)
 (require 'setup-helm)
 (require 'pygmentize)
-(require 'bundler)
-(require 'rspec-mode)
 (require 'atreus)
 
 ;; SETTINGS (SYSTEM)

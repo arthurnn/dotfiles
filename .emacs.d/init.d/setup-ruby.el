@@ -1,5 +1,10 @@
+(require 'bundler)
+(require 'minitest)
+(require 'rspec-mode)
+
 (require 'smartparens-config)
 (add-hook 'ruby-mode-hook #'smartparens-mode)
+
 ;; add projectile on rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
@@ -63,7 +68,6 @@
  '(rspec-use-zeus-when-possible t)
 )
 
-(add-hook 'ruby-mode-hook 'minitest-mode)
 ;; Avoid conflicts with rspec-mode
 (add-hook 'minitest-mode-hook (lambda () (rspec-verifiable-mode -1)))
 
