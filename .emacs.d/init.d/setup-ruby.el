@@ -1,3 +1,5 @@
+(require 'smartparens-config)
+(add-hook 'ruby-mode-hook #'smartparens-mode)
 ;; add projectile on rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
