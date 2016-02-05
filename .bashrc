@@ -65,4 +65,4 @@ export HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # GitHub config
-alias gh='cd ~/src/github/github/; pwd'
+alias gh='cd ~/src/github/github/; pwd; chruby 2.1.7; ruby -v'
