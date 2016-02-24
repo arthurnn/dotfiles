@@ -6,6 +6,7 @@ name=${1:-"$(basename $PWD)"}
 install_dir="$HOME/.rubies/$name/"
 
 echo "configuring on $install_dir"
+[ -f ./configure ] || autoconf
 ./configure --prefix="$install_dir" "${opt_dir:+--with-opt-dir="$opt_dir"}"
 
 echo "making..."
