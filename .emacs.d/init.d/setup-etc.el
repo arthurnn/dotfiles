@@ -14,7 +14,7 @@
 (setq whitespace-display-mappings
  '(
     (space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
-    (tab-mark 9 [187 9] [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
+    (tab-mark 9 [183 9] [46 9])
     ))
 (setq whitespace-style '(face tabs trailing tab-mark space-mark spaces))
 (let ((dark (eq 'dark (frame-parameter nil 'background-mode))))
@@ -22,8 +22,8 @@
                         :foreground (if dark "pink4" "azure3")
                         :background 'unspecified)
     (set-face-attribute 'whitespace-tab nil
-                        :foreground 'unspecified
-                        :background "gray15")
+                        :foreground "red"
+                        :background 'unspecified)
     (set-face-attribute 'whitespace-newline nil
                         :foreground "gray15")
     (set-face-attribute 'whitespace-trailing nil
