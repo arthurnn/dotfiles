@@ -8,15 +8,29 @@
 ;; trailing white-spaces before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (defun turn-off-delete-trailing-whitespace ()
-    (remove-hook 'before-save-hook 'delete-trailing-whitespace))
-(setq-default whitespace-style (quote
-  (face spaces tabs newline space-mark tab-mark newline-mark)))
+  (remove-hook 'before-save-hook 'delete-trailing-whitespace))
 
-;; Show trailing white spaces
-(setq-default show-trailing-whitespace t)
-;; Show tabs
-;;(standard-display-ascii ?\t "^I")
-;; Disable tabs as indentation
+(require 'whitespace)
+(setq whitespace-display-mappings
+ '(
+    (space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+    (tab-mark 9 [187 9] [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
+    ))
+(setq whitespace-style '(face tabs trailing tab-mark space-mark spaces))
+(let ((dark (eq 'dark (frame-parameter nil 'background-mode))))
+    (set-face-attribute 'whitespace-space nil
+                        :foreground (if dark "pink4" "azure3")
+                        :background 'unspecified)
+    (set-face-attribute 'whitespace-tab nil
+                        :foreground 'unspecified
+                        :background "gray15")
+    (set-face-attribute 'whitespace-newline nil
+                        :foreground "gray15")
+    (set-face-attribute 'whitespace-trailing nil
+                        :foreground "red"
+                        :background 'unspecified
+                        :underline t))
+(add-hook 'prog-mode-hook 'whitespace-mode)
 (setq-default indent-tabs-mode nil)
 
 ;; send backup files to its own dir
