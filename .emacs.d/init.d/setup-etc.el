@@ -31,7 +31,17 @@
                         :background 'unspecified
                         :underline t))
 (add-hook 'prog-mode-hook 'whitespace-mode)
+
+;; Disable tab modes, unless in C mode, see bellow
 (setq-default indent-tabs-mode nil)
+
+;; Default to c linux style
+(add-hook 'c-mode-hook
+          (lambda ()
+            (setq-default indent-tabs-mode t)
+            ))
+(setq c-default-style "linux" c-basic-offset 2)
+(setq-default tab-width 2)
 
 ;; send backup files to its own dir
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
