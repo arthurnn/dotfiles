@@ -1,17 +1,6 @@
 (add-hook
  'go-mode-hook
  '(lambda ()
-    ;; Outline mode
-    ;; Level 3: //.  use this to devide the file into major sections
-    ;; Level 4: //   followed by at least two characters
-    ;; Level 4: package
-    ;; Level 4: import
-    ;; Level 4: const
-    ;; Level 4: var  followed by at least one character
-    ;; Level 4: type
-    ;; Level 4: func
-    ;; Level 5 and above: tab-indented lines with at least five
-    ;; characters
     (make-local-variable 'outline-regexp)
     (setq outline-regexp "//\\.\\|//[^\r\n\f][^\r\n\f]\\|pack\\|func\\|impo\\|cons\\|var[^\r\n\f]\\|type\\|\t\t*[^\r\n\f]\\{4\\}")
     (outline-minor-mode 1)
