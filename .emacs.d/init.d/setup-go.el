@@ -6,10 +6,6 @@
     (outline-minor-mode 1)
     (local-set-key "\M-a" 'outline-previous-visible-heading)
     (local-set-key "\M-e" 'outline-next-visible-heading)
-
-    ;; Other
-    (setq tab-width 4)
-    (setq show-trailing-whitespace t)
     ))
 
 ;; helper variable
