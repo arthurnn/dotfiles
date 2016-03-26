@@ -1,6 +1,7 @@
 (require 'bundler)
 (require 'minitest)
 (require 'rspec-mode)
+(require 'chruby)
 
 (require 'smartparens-config)
 (add-hook 'ruby-mode-hook #'smartparens-mode)

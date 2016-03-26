@@ -13,7 +13,7 @@
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme
                       ;Ruby
-                      inf-ruby ruby-block
+                      chruby inf-ruby ruby-block
                       rubocop minitest
                       flymake-ruby
                       yaml-mode haml-mode
