@@ -29,6 +29,8 @@
 
 ;; git status
 (global-set-key (kbd "C-x g") 'magit-status)
+;; git etc
+(global-set-key (kbd "C-c g b") 'magit-blame)
 
 ;; git grep
 (global-set-key (kbd "C-x C-g") 'helm-git-grep)
