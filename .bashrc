@@ -36,7 +36,9 @@ export PATH=$PATH:$GOPATH/bin
 # chruby
 if [ -n "$BASH_VERSION" ] && [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
     source /usr/local/opt/chruby/share/chruby/chruby.sh
-    RUBIES+=(~/.rbenv/versions/*)
+    RUBIES+=(
+        "$HOME/src/github/github/vendor/ruby/ruby-github"
+    )
     source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
