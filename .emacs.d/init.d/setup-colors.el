@@ -1,5 +1,6 @@
 ;; Colors ;;
-(load-theme 'zenburn t)
+(load-theme 'suscolors t)
+;;(load-theme 'zenburn t)
 ;;(load-theme 'solarized-dark t)
 
 

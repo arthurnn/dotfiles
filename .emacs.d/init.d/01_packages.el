@@ -11,7 +11,7 @@
                       ag yasnippet
                       smartparens
                       ;Themes
-                      color-theme color-theme-solarized zenburn-theme
+                      color-theme color-theme-solarized zenburn-theme suscolors-theme
                       ;Ruby
                       chruby inf-ruby ruby-block
                       rubocop minitest
