@@ -23,6 +23,9 @@ export ALTERNATE_EDITOR=emacs EDITOR=emacs VISUAL=emacs
 export TERM="xterm-256color"
 alias reset-color="echo -e \"\e[39m\""
 
+# android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 # Cask
 export PATH=$PATH:$HOME/.cask/bin
 
