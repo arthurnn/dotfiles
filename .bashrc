@@ -25,6 +25,7 @@ alias reset-color="echo -e \"\e[39m\""
 
 # android
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Cask
 export PATH=$PATH:$HOME/.cask/bin
