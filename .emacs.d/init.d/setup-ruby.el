@@ -74,7 +74,8 @@
 
 (setq safe-local-variable-values
       '((minitest-use-bundler . nil)
-        (minitest-default-command . ("bin/testrb"))))
+        (minitest-use-zeus-when-possible . nil)
+        (minitest-default-command . ("bin/testrb_or_zt"))))
 
 ;; Install snippets
 (eval-after-load 'minitest
