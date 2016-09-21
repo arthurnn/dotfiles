@@ -97,3 +97,7 @@ function ss {
     done
     echo "unknown shortcut"
 }
+
+function replace-string {
+    git grep -l "$1" | xargs sed -i '' -e"s/$1/$2/g"
+}
