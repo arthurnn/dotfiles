@@ -10,6 +10,7 @@
                       helm helm-git-grep
                       ag yasnippet
                       smartparens
+                      expand-region
                       ;Themes
                       color-theme color-theme-solarized zenburn-theme suscolors-theme
                       ;Ruby
