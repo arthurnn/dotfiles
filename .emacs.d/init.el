@@ -4,14 +4,16 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; PATH var
-(add-to-list 'exec-path "/usr/local/bin")
-
 ;; Load path etc.
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path (concat dotfiles-dir "/init.d"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
+
+;; setup ENV
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 ;; Custom libs
 (autoload 'growl "growl" t)
@@ -28,6 +30,7 @@
 (require 'setup-helm)
 (require 'pygmentize)
 (require 'atreus)
+
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
