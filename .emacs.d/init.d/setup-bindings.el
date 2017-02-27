@@ -63,6 +63,6 @@
 (global-set-key (kbd "C-x .") 'split-window-right)
 (global-set-key (kbd "C-x l") 'delete-window)
 
-(global-set-key (kbd "C-@") 'er/expand-region)
+(global-set-key (kbd "C-;") 'er/expand-region)
 
 (provide 'setup-bindings)
