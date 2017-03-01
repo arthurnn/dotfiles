@@ -67,7 +67,7 @@ export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 # GitHub config
 alias gh='cd ~/src/github/github/; pwd; chruby github; ruby -v'
 
-alias fixbluejeans='sudo killall VDCAssistant'
+
 
 # from https://github.com/fxn/dotfiles/blob/c84d469981c424f1b7081914dc517bd24132d876/bashrc#L27
 # Given an array GO_SHORTCUTS defined elsewhere with pairs shorcut -> directory:
