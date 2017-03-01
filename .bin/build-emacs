@@ -8,19 +8,15 @@ fi
 prefix="/usr/local/Emacs"
 mkdir $prefix
 
-./configure --prefix="$prefix" --with-modules --with-ns --disable-ns-self-contained || exit
+./configure --prefix="$prefix" --with-modules --with-ns || exit
 
 make clean || exit
 make -j4 || exit
 make -j2 install || exit
 
+rm -rf /Applications/Emacs.app
 cp -r nextstep/Emacs.app /Applications/Emacs.app
+ln -s /Applications/Emacs.app/Contents/MacOS/bin/emacsclient /usr/local/bin
 
-rm $prefix/bin/emacs
-cat <<EOF > $prefix/bin/emacs
-#!/bin/bash
-exec /Applications/Emacs.app/Contents/MacOS/Emacs -nw "\$@"
-EOF
-chmod a+x $prefix/bin/emacs
 
 echo "Emacs build finished."
