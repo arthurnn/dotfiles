@@ -11,8 +11,6 @@
                       ag yasnippet
                       smartparens
                       expand-region
-                      ;Themes
-                      color-theme color-theme-solarized zenburn-theme suscolors-theme
                       ;Ruby
                       chruby inf-ruby ruby-block
                       rubocop minitest

@@ -31,7 +31,6 @@
 (require 'pygmentize)
 (require 'atreus)
 
-
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
 (if (file-exists-p system-type-config) (load system-type-config))

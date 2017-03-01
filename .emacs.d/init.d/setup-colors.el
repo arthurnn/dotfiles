@@ -1,7 +1,6 @@
 ;; Colors ;;
-(load-theme 'suscolors t)
-;;(load-theme 'zenburn t)
-;;(load-theme 'solarized-dark t)
+(require 'atom-one-dark-theme)
 
+(load-theme 'atom-one-dark t)
 
 (provide 'setup-colors)
