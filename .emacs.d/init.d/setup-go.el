@@ -90,4 +90,7 @@
         (compile (concat "go test \"" pkg "\"")))))
 
 
+(add-hook 'before-save-hook #'gofmt-before-save)
+
+
 (provide 'setup-go)
