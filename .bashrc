@@ -34,6 +34,9 @@ export PATH=$PATH:$HOME/.cask/bin
 export GOPATH=$HOME/src/gobox
 export PATH=$PATH:$GOPATH/bin
 
+# Python
+export PATH=$PATH:$HOME/Library/Python/2.7/bin/
+
 # chruby
 if [ -n "$BASH_VERSION" ] && [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
     source /usr/local/opt/chruby/share/chruby/chruby.sh
