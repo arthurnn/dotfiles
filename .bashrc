@@ -38,9 +38,14 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 
 # chruby
-if [ -n "$BASH_VERSION" ] && [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
-    source /usr/local/opt/chruby/share/chruby/chruby.sh
-    source /usr/local/opt/chruby/share/chruby/auto.sh
+if [ -n "$BASH_VERSION" ] && [ -d /usr/local/opt/chruby/share/chruby ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
+if [ -n "$BASH_VERSION" ] && [ -d /usr/local/share/chruby ]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
 fi
 
 genpasswd() {
