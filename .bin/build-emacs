@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ ! -d /usr/local/opt/texinfo ]; then
+    echo "ERROR: install textinfo to have latest makeinfo"
+    exit
+fi
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
 if [ ! -f configure ]; then
     echo "Autogening..."
     ./autogen.sh
