@@ -39,5 +39,3 @@
 	auto = 0
 [commit]
 	gpgsign = true
-[gpg]
-	program = ghgpg
