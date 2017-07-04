@@ -55,7 +55,7 @@ genpasswd() {
 }
 
 # emacs
-alias e='ec'
+alias e='emacsclient -t -a ""'
 alias egit='e $(git ls-files -m)'
 
 # GPG
