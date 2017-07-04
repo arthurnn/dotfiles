@@ -72,9 +72,9 @@ export HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # GitHub config
-alias gh='cd ~/src/github/github/; pwd; chruby github; ruby -v'
-
-
+if [ -d $HOME/src/github ]; then
+    alias gh='cd $HOME/src/github/; pwd; chruby github; ruby -v'
+fi
 
 # from https://github.com/fxn/dotfiles/blob/c84d469981c424f1b7081914dc517bd24132d876/bashrc#L27
 # Given an array GO_SHORTCUTS defined elsewhere with pairs shorcut -> directory:
