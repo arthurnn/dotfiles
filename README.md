@@ -20,3 +20,14 @@ To update, `cd` into your local `dotfiles` repository and then:
 ```bash
 source bootstrap.sh
 ```
+
+
+#### Bash
+
+In OSX you need to require bashrc from a bash_profile file. You can add more OSX configs to the bash_profile file if needed. i.e:
+
+
+```bash
+# ~/.bash_profile
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+```
