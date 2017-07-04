@@ -7,7 +7,7 @@ fi
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     export PS1='\[\e[0;31m\][\u@\h \W]\$\[\e[0m\] '
 else
-    export PS1='[\u@\h \W]\$ '
+    export PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
 fi
 
 # git
