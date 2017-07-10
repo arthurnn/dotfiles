@@ -139,8 +139,8 @@ If the current buffer is not associated with a file, do nothing."
 (setq initial-scratch-message nil)
 
 ;; org-mode
-(setq org-directory "~/Documents/org-mode")
-(setq org-agenda-files '("~/Documents/org-mode"))
+(setq org-directory "/Users/arthurnn/Google Drive/org-mode")
+(setq org-agenda-files '("/Users/arthurnn/Google Drive/org-mode"))
 
 ;; Monkey-patch git-link
 (eval-after-load "git-link"
