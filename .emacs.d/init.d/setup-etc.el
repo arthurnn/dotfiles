@@ -17,19 +17,6 @@
     (tab-mark 9 [183 9] [46 9])
     ))
 (setq whitespace-style '(face tabs trailing tab-mark space-mark spaces))
-(let ((dark (eq 'dark (frame-parameter nil 'background-mode))))
-    (set-face-attribute 'whitespace-space nil
-                        :foreground (if dark "pink4" "azure3")
-                        :background 'unspecified)
-    (set-face-attribute 'whitespace-tab nil
-                        :foreground "red"
-                        :background 'unspecified)
-    (set-face-attribute 'whitespace-newline nil
-                        :foreground "gray15")
-    (set-face-attribute 'whitespace-trailing nil
-                        :foreground "red"
-                        :background 'unspecified
-                        :underline t))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
 ;; Disable tab modes, unless in C mode, see bellow
