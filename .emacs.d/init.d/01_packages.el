@@ -5,7 +5,8 @@
                       ;Git
                       magit gist git-link
                       ;Misc modes
-                      go-mode markdown-mode znc
+                      go-mode markdown-mode rust-mode
+                      znc
                       flx-ido grizzl
                       helm helm-git-grep
                       ag yasnippet
