@@ -90,7 +90,12 @@
         (compile (concat "go test \"" pkg "\"")))))
 
 
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; https://github.com/syohex/emacs-go-eldoc
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+
 (add-hook 'before-save-hook #'gofmt-before-save)
-
-
 (provide 'setup-go)

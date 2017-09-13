@@ -5,13 +5,15 @@
                       ;Git
                       magit gist git-link
                       ;Misc modes
-                      go-mode markdown-mode rust-mode
+                      auto-complete markdown-mode rust-mode
                       znc
                       flx-ido grizzl
                       helm helm-git-grep
                       ag yasnippet
                       smartparens
                       expand-region
+                      ;GO
+                      go-mode go-eldoc
                       ;Ruby
                       chruby inf-ruby ruby-block
                       rubocop minitest
