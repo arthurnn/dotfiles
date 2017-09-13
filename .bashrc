@@ -31,7 +31,6 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.cask/bin
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/src/gobox
 export PATH=$PATH:$GOPATH/bin
 
