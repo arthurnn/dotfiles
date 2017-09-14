@@ -13,7 +13,7 @@
                       smartparens
                       expand-region
                       ;GO
-                      go-mode go-eldoc
+                      go-mode go-eldoc go-guru
                       ;Ruby
                       chruby inf-ruby ruby-block
                       rubocop minitest
