@@ -37,5 +37,7 @@
 	default = simple
 [gc]
 	auto = 0
+[credential]
+	helper = cache
 [commit]
 	gpgsign = true
