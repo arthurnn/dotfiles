@@ -1,9 +1,8 @@
 ;; Install the following packges:
 ;;
-;; go get github.com/syohex/emacs-go-eldoc
-;; go get github.com/nsf/gocode
-;; go get golang.org/x/tools/cmd/goimports
-;; go get golang.org/x/tools/cmd/guru
+;; go get -u github.com/nsf/gocode
+;; go get -u golang.org/x/tools/cmd/goimports
+;; go get -u golang.org/x/tools/cmd/guru
 
 (require 'go-autocomplete)
 (require 'auto-complete-config)
