@@ -1,9 +1,9 @@
 ;; Install the following packges:
 ;;
-;; go get -u github.com/nsf/gocode
-;; go get -u github.com/josharian/impl
 ;; go get -u golang.org/x/tools/cmd/goimports
 ;; go get -u golang.org/x/tools/cmd/guru
+;; go get -u github.com/nsf/gocode
+;; go get -u github.com/josharian/impl
 
 (require 'go-autocomplete)
 (require 'auto-complete-config)
