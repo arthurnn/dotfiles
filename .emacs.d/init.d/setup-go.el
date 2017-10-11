@@ -29,6 +29,8 @@
 )
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
+(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
+
 (defun coder/go-guru-set-current-package-as-main ()
   "GoGuru requires the scope to be set to a go package which
    contains a main, this function will make the current package the
