@@ -207,4 +207,14 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key [remap move-beginning-of-line]
                 'prelude-move-beginning-of-line)
 
+
+;; org-pomodoro
+(add-hook 'org-pomodoro-started-hook
+          (lambda ()
+            (ns-do-applescript "display notification \"Starting a new Pomodoro\"")))
+
+(add-hook 'org-pomodoro-finished-hook
+          (lambda ()
+            (ns-do-applescript "display notification \"Pomodoro is over\"")))
+
 (provide 'setup-etc)

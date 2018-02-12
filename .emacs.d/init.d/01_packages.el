@@ -12,6 +12,7 @@
                       ag yasnippet
                       smartparens
                       expand-region
+                      org-pomodoro
                       ;GO
                       go-mode go-eldoc go-guru go-impl
                       ;Ruby
