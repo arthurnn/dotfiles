@@ -17,7 +17,6 @@
 (exec-path-from-shell-copy-env "GOPATH")
 
 ;; Custom libs
-(autoload 'growl "growl" t)
 (autoload 'idomenu "idomenu" t)
 
 ;; Setup stuff
