@@ -55,7 +55,9 @@ genpasswd() {
 }
 
 # emacs
-export PATH=/usr/local/Emacs/bin:$PATH
+if [ -d /usr/local/Emacs ]; then
+  export PATH=/usr/local/Emacs/bin:$PATH
+fi
 alias e='emacsclient -t -a ""'
 alias egit='e $(git ls-files -m)'
 
