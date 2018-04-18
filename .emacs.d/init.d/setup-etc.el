@@ -209,6 +209,9 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 ;; org-pomodoro
+(custom-set-variables
+ '(org-pomodoro-play-sounds nil))
+
 (add-hook 'org-pomodoro-started-hook
           (lambda ()
             (ns-do-applescript "display notification \"Starting a new Pomodoro\"")))
