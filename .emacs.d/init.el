@@ -29,7 +29,7 @@
 (require 'setup-bindings)
 (require 'setup-helm)
 (require 'pygmentize)
-(require 'atreus)
+(require 'darwin)
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))

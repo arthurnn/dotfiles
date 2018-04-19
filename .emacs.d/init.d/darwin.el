@@ -21,5 +21,8 @@
       'browse-url-generic browse-url-generic-program
       "open")
 
+;; mac switch meta key
+(setq-default mac-option-modifier '(:ordinary meta :function meta :mouse meta))
+
 (provide 'darwin)
 ;;; darwin.el ends here
