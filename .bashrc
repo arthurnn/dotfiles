@@ -37,6 +37,12 @@ export PATH=$PATH:$GOPATH/bin
 # Python
 export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 
+# MySQL 5.7
+export MYSQLPATH=`brew --prefix mysql@5.7 2>/dev/null`
+if [ -n "$MYSQLPATH" ]; then
+   export PATH=$MYSQLPATH/bin:$PATH
+fi
+
 # chruby
 if [ -n "$BASH_VERSION" ] && [ -d /usr/local/opt/chruby/share/chruby ]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
