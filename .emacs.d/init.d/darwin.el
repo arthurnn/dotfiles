@@ -22,7 +22,8 @@
       "open")
 
 ;; mac switch meta key
-(setq-default mac-option-modifier '(:ordinary meta :function meta :mouse meta))
+(setq mac-command-modifier nil)
+(setq mac-option-modifier 'meta)
 
 (provide 'darwin)
 ;;; darwin.el ends here
