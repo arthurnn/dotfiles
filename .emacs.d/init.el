@@ -32,6 +32,7 @@
 (require 'pygmentize)
 (require 'darwin)
 (require 'highlight-indentation)
+(set-face-background 'highlight-indentation-current-column-face "#c3c3c3")
 
 ;; SETTINGS (SYSTEM)
 (setq system-type-config (concat dotfiles-dir "init.d/" (symbol-name system-type) ".el"))
