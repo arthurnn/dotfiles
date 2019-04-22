@@ -34,6 +34,11 @@
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+;; Highlight Indentations
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-current-column-face "#c3c3c3")
+(add-hook 'yaml-mode-hook 'highlight-indentation-current-column-mode)
+
 ;; Disable tab modes, unless in C mode, see bellow
 (setq-default indent-tabs-mode nil)
 
