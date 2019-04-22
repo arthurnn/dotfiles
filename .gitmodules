@@ -1,0 +1,3 @@
+[submodule ".emacs.d/vendor/highlight-indents"]
+	path = .emacs.d/vendor/highlight-indents
+	url = git@github.com:antonj/Highlight-Indentation-for-Emacs.git
