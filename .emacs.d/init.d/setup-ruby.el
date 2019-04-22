@@ -87,6 +87,8 @@
 ;; Avoid conflicts with rspec-mode
 (add-hook 'minitest-mode-hook (lambda () (rspec-verifiable-mode -1)))
 
+(defun minitest-bundler-command () '("bin/bundle" "exec"))
+
 (setq safe-local-variable-values
       '((minitest-use-bundler . nil)
         (minitest-use-zeus-when-possible . nil)
