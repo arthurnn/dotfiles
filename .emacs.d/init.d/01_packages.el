@@ -5,7 +5,8 @@
                       ;Git
                       magit gist git-link
                       ;Misc modes
-                      auto-complete markdown-mode rust-mode
+                      lsp-mode company-lsp flycheck
+                      markdown-mode rust-mode
                       znc
                       flx-ido grizzl
                       helm helm-git-grep
@@ -14,7 +15,7 @@
                       expand-region
                       org-pomodoro
                       ;GO
-                      go-mode go-eldoc go-guru go-impl
+                      go-mode
                       ;Ruby
                       chruby inf-ruby ruby-block
                       rubocop minitest
