@@ -5,6 +5,8 @@
 ;; go get -u github.com/nsf/gocode
 ;; go get -u github.com/josharian/impl
 
+(require 'company-lsp)
+(push 'company-lsp company-backends)
 
 (add-hook 'go-mode-hook 'go-eldoc-setup)
 
