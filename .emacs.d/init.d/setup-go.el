@@ -5,9 +5,6 @@
 ;; go get -u github.com/nsf/gocode
 ;; go get -u github.com/josharian/impl
 
-(require 'go-autocomplete)
-(require 'auto-complete-config)
-(ac-config-default)
 
 (add-hook 'go-mode-hook 'go-eldoc-setup)
 
