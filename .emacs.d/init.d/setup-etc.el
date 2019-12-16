@@ -106,7 +106,7 @@ If the current buffer is not associated with a file, do nothing."
 
 ;; ido mode
 (ido-mode t)
-(ido-everywhere t)
+;;(ido-everywhere t) ; This ain't working anymore
 (flx-ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil) ;; disable ido faces to see flx highlights.
