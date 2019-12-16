@@ -15,9 +15,6 @@
 ;; turn off auto-fill
 (add-hook 'ruby-mode-hook 'turn-off-auto-fill)
 
-;; add flymake syntax check
-;;(add-hook 'ruby-mode-hook 'flymake-ruby-load)
-
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
