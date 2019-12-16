@@ -6,8 +6,6 @@
 (require 'company-lsp)
 (push 'company-lsp company-backends)
 
-;;(add-hook 'go-mode-hook 'go-eldoc-setup)
-
 (defun my-go-mode-hook ()
   ; Use goimports instead of go-fmt
   (setq gofmt-command "goimports")
@@ -27,6 +25,5 @@
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 (add-hook 'go-mode-hook 'lsp-deferred)
-
 
 (provide 'setup-go)
