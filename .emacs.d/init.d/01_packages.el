@@ -17,9 +17,8 @@
                       ;GO
                       go-mode
                       ;Ruby
-                      chruby inf-ruby ruby-block
-                      rubocop minitest
-                      flymake-ruby
+                      chruby inf-ruby
+                      minitest
                       yaml-mode haml-mode
                       ;Web
                       web-mode js2-mode coffee-mode web-beautify
