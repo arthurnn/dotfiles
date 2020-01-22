@@ -15,7 +15,7 @@
                       expand-region
                       org-pomodoro
                       ;GO
-                      go-mode
+                      go-mode gotest
                       ;Ruby
                       chruby inf-ruby
                       minitest
