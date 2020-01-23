@@ -5,7 +5,7 @@
                       ;Git
                       magit gist git-link
                       ;Misc modes
-                      lsp-mode company-lsp flycheck
+                      lsp-mode lsp-ui company-lsp flycheck
                       markdown-mode rust-mode
                       znc
                       flx-ido grizzl
@@ -15,7 +15,7 @@
                       expand-region
                       org-pomodoro
                       ;GO
-                      go-mode gotest
+                      go-mode gotest golint
                       ;Ruby
                       chruby inf-ruby
                       minitest

@@ -22,6 +22,7 @@
 
 ;; Setup stuff
 (require '01_packages)
+(require 'setup-lsp)
 (require 'setup-colors)
 (require 'setup-ruby)
 (require 'setup-go)
