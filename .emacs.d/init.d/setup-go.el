@@ -19,6 +19,8 @@
 
   ;; Godef jump key binding
   (local-set-key (kbd "C-c C-j") 'lsp-find-definition)
+  (local-set-key (kbd "C-c C-k") 'lsp-find-references)
+  (local-set-key (kbd "C-c C-l") 'lsp-find-implementation)
   (local-set-key (kbd "C-c C-b") 'pop-tag-mark)
   (local-set-key (kbd "C-c d") 'lsp-ui-doc-glance)
   (local-set-key (kbd "C-c i") 'lsp-ui-sideline-toggle-symbols-info)
