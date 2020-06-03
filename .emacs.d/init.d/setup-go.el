@@ -9,6 +9,9 @@
 
   (setq go-test-verbose 1)
 
+  (setq lsp-gopls-build-flags '("-mod=readonly"))
+  (add-to-list 'lsp-file-watch-ignored "[/\\\\]vendor$")
+
   ; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
 
