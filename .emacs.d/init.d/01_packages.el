@@ -25,9 +25,7 @@
 )  "A list of packages to ensure are installed at launch.")
 
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+	     '("melpa" . "https://melpa.org/packages/") t)
 
 ;;(add-to-list 'package-archives
 ;;             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)

@@ -1,4 +1,3 @@
-(require 'cl)
 ;; Remove bars first thing
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -27,7 +26,6 @@
 (require 'setup-ruby)
 (require 'setup-go)
 (require 'setup-etc)
-(require 'setup-erc)
 (require 'setup-bindings)
 (require 'setup-helm)
 (require 'pygmentize)
