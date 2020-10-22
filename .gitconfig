@@ -37,7 +37,5 @@
 	default = simple
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[gc]
-	auto = 0
 [commit]
 	gpgsign = true
