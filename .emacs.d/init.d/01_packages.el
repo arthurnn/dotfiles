@@ -17,7 +17,7 @@
                       ;GO
                       go-mode gotest golint
                       ;Ruby
-                      chruby inf-ruby
+                      inf-ruby
                       minitest
                       yaml-mode haml-mode
                       ;Web

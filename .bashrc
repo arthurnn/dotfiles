@@ -43,16 +43,8 @@ if [ -n "$MYSQLPATH" ]; then
    export PATH=$MYSQLPATH/bin:$PATH
 fi
 
-# chruby
-if [ -n "$BASH_VERSION" ] && [ -d /usr/local/opt/chruby/share/chruby ]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
-
-if [ -n "$BASH_VERSION" ] && [ -d /usr/local/share/chruby ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-fi
+# Lets use rbenv for now
+eval "$(rbenv init -)"
 
 genpasswd() {
     local l=$1
@@ -82,7 +74,7 @@ export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # GitHub config
 if [ -d $HOME/src/github ]; then
-    alias gh='cd $HOME/src/github/; pwd; chruby github; ruby -v'
+    alias gh='cd $HOME/src/github/; pwd; ruby -v'
 fi
 
 # from https://github.com/fxn/dotfiles/blob/c84d469981c424f1b7081914dc517bd24132d876/bashrc#L27
