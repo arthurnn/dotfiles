@@ -12,7 +12,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = emacsclient -t -a=\"\"
+	editor = code --wait
 	attributesfile = ~/.gitattributes
 [diff "json"]
 	textconv = python -m json.tool
