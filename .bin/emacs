@@ -1,5 +1,3 @@
 #!/bin/bash
 
-if [ -e '/Applications/Emacs.app' ]; then
-  open -a /Applications/Emacs.app "$@"
-fi
+echo "Use code instead"
