@@ -19,7 +19,6 @@ alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C
 alias gsign='git commit -C HEAD -S -s --amend'
 
 # terminal configs
-export ALTERNATE_EDITOR=emacs EDITOR=emacs VISUAL=emacs
 export TERM="xterm-256color"
 alias reset-color="echo -e \"\e[39m\""
 
@@ -51,13 +50,6 @@ genpasswd() {
     [ "$l" == "" ] && l=16
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
-
-# emacs
-if [ -d /usr/local/Emacs ]; then
-  export PATH=/usr/local/Emacs/bin:$PATH
-fi
-alias e='emacsclient -t -a ""'
-alias egit='e $(git ls-files -m)'
 
 # GPG
 export GPG_TTY=`tty`
