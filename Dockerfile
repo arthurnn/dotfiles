@@ -4,4 +4,4 @@ WORKDIR /app
 COPY . .
 RUN script/setup
 
-ENTRYPOINT ["/bin/bash"]
+CMD "/bin/bash"
