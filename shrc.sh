@@ -51,6 +51,14 @@ if [ -d $HOME/src/github ]; then
     alias gh='cd $HOME/src/github/; pwd; ruby -v'
 fi
 
+# Save directory changes
+cd() {
+  builtin cd "$@" || return
+  [ "$TERMINALAPP" ] && command -v set_terminal_app_pwd >/dev/null \
+    && set_terminal_app_pwd
+  pwd > "$HOME/.lastpwd"
+}
+
 # from https://github.com/fxn/dotfiles/blob/c84d469981c424f1b7081914dc517bd24132d876/bashrc#L27
 # Given an array GO_SHORTCUTS defined elsewhere with pairs shorcut -> directory:
 #

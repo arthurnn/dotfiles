@@ -43,7 +43,7 @@ then
   }
 fi
 [ -s ~/.lastpwd ] && [ "$PWD" = "$HOME" ] && \
-  builtin cd "$(cat ~/.lastpwd)" 2>/dev/null
+  builtin cd "$(cat ~/.lastpwd)" 2>/dev/null && echo "Last pwd $(cat ~/.lastpwd)"
 [ $TERMINALAPP ] && set_terminal_app_pwd
 
 # Load secrets
