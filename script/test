@@ -2,5 +2,5 @@
 
 find . -name '*.sh' -exec bash -n {} \;
 
-#docker build -t dotfiles .
-#docker run --rm dotfiles:latest
+docker build -t dotfiles .
+docker run --rm dotfiles:latest true
