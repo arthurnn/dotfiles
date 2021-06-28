@@ -77,11 +77,11 @@ for DOTFILE in *; do
   fi
 done
 
-HOMEDOTFILES="$HOME/.dotfiles"
-if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]
-then
-  ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
-fi
+# HOMEDOTFILES="$HOME/.dotfiles"
+# if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]
+# then
+#   ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
+# fi
 
 # Fix up permissions for Codespaces
 if [ -n "$CODESPACES" ]
