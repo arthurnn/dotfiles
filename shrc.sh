@@ -1,10 +1,46 @@
 #!/bin/sh
 # shellcheck disable=SC2155
 
-export PATH=/usr/local/sbin:$PATH
-if [ -d "$HOME/.bin" ] ; then
-    export PATH="$HOME/.bin:$PATH"
-fi
+
+# Setup paths
+remove_from_path() {
+  [ -d "$1" ] || return
+  PATHSUB=":$PATH:"
+  PATHSUB=${PATHSUB//:$1:/:}
+  PATHSUB=${PATHSUB#:}
+  PATHSUB=${PATHSUB%:}
+  export PATH="$PATHSUB"
+}
+
+add_to_path_start() {
+  [ -d "$1" ] || return
+  remove_from_path "$1"
+  export PATH="$1:$PATH"
+}
+
+add_to_path_end() {
+  [ -d "$1" ] || return
+  remove_from_path "$1"
+  export PATH="$PATH:$1"
+}
+
+force_add_to_path_start() {
+  remove_from_path "$1"
+  export PATH="$1:$PATH"
+}
+
+quiet_which() {
+  command -v "$1" >/dev/null
+}
+
+add_to_path_start "/usr/local/sbin"
+add_to_path_start "/home/linuxbrew/.linuxbrew/bin"
+add_to_path_start "/usr/local/bin"
+add_to_path_start "/opt/homebrew/bin"
+
+# if [ -d "$HOME/.bin" ] ; then
+#     export PATH="$HOME/.bin:$PATH"
+# fi
 
 # git alias
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
@@ -35,7 +71,7 @@ if [ -n "$MYSQLPATH" ]; then
 fi
 
 # Lets use rbenv for now
-eval "$(rbenv init -)"
+quiet_which rbenv && eval "$(rbenv init -)"
 
 genpasswd() {
     local l=$1
