@@ -51,9 +51,6 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
-# GPG
-export GPG_TTY=`tty`
-
 # Docker
 eval `boot2docker shellinit 2>/dev/null`
 
