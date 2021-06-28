@@ -39,7 +39,7 @@ for DOTFILE in *; do
   fi
 
   # Don't try to install documentation/script files
-  echo $DOTFILE | egrep -q '(^script/$|\.txt$|\.md$)' && continue
+  echo $DOTFILE | egrep -q '(^script/$|\.txt$|\.md$|Dockerfile$)' && continue
 
   # Fixup VSCode settings path
   echo $DOTFILE | grep -q 'vscode-settings' &&
