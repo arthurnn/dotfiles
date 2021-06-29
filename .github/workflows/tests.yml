@@ -24,7 +24,3 @@ jobs:
 
     - name: Test bashrc
       run: bash -xc "source ~/.bashrc"
-
-    - name: Test zshrc
-      run: zsh -xc "source ~/.zshrc"
-      if: matrix.os == 'macos-latest'
