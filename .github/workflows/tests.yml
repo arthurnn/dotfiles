@@ -10,7 +10,6 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - windows-latest
           - macos-latest
     steps:
     - name: Set up Git repository
