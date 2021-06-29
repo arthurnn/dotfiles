@@ -38,9 +38,7 @@ add_to_path_start "/home/linuxbrew/.linuxbrew/bin"
 add_to_path_start "/usr/local/bin"
 add_to_path_start "/opt/homebrew/bin"
 
-# if [ -d "$HOME/.bin" ] ; then
-#     export PATH="$HOME/.bin:$PATH"
-# fi
+add_to_path_start "$HOME/.bin"
 
 # git alias
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
