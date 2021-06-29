@@ -35,7 +35,5 @@
 	rebase = true
 [push]
 	default = simple
-[gpg]
-  program = /.codespaces/bin/gh-gpgsign
 [commit]
 	gpgsign = false
