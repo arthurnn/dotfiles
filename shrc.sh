@@ -94,33 +94,11 @@ cd() {
   pwd > "$HOME/.lastpwd"
 }
 
-# from https://github.com/fxn/dotfiles/blob/c84d469981c424f1b7081914dc517bd24132d876/bashrc#L27
-# Given an array GO_SHORTCUTS defined elsewhere with pairs shorcut -> directory:
-#
-#   GO_SHORTCUTS=(
-#     rails
-#     $HOME/prj/rails
-#
-#     tmp
-#     $HOME/tmp
-#  )
-#
-# you can cd into the destination directories given the shortcut. For example
-#
-#   ss rails
-#
-# takes you to $HOME/prj/rails from anywhere.
-function ss {
-    local target=$1
-    local len=${#GO_SHORTCUTS[@]}
-    for (( i=0; i<$len; i+=2 ));
-    do
-        if [[ "$1" = "${GO_SHORTCUTS[$i]}" ]]; then
-            cd "${GO_SHORTCUTS[$i+1]}"
-            return
-        fi
-    done
-    echo "unknown shortcut"
+# To create shortcuts:
+# mkdir $HOME/ss; cd $HOME/ss
+# ln -s source shortcut
+ss() {
+  cd "$HOME/ss/$@" &>/dev/null || echo "unknown shortcut"
 }
 
 function replace-string {
