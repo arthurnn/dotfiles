@@ -1,7 +1,6 @@
 #!/bin/sh
 # shellcheck disable=SC2155
 
-
 # Setup paths
 remove_from_path() {
   [ -d "$1" ] || return
@@ -40,13 +39,15 @@ add_to_path_start "/opt/homebrew/bin"
 
 add_to_path_start "$HOME/.bin"
 
-# git alias
+# aliases
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
 alias gsign='git commit -C HEAD -S -s --amend'
-
-# terminal configs
-# export TERM="xterm-256color"
 alias reset-color="echo -e \"\e[39m\""
+
+if [ $MACOS ]
+then
+  alias desktop="cd $HOME/Desktop"
+fi
 
 # android
 export ANDROID_HOME=$HOME/Library/Android/sdk
