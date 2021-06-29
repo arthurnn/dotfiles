@@ -47,5 +47,5 @@ fi
 [ $TERMINALAPP ] && set_terminal_app_pwd
 
 # Load secrets
-# [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
+[ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
