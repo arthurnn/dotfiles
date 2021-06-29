@@ -3,7 +3,7 @@
 	status = auto
 	branch = auto
 [user]
-	name = Arthur Neves
+	name = Arthur Nogueira Neves
 	email = arthurnn@gmail.com
 	signingkey = 1E433E17
 [alias]
@@ -35,7 +35,7 @@
 	rebase = true
 [push]
 	default = simple
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+[gpg]
+  program = /.codespaces/bin/gh-gpgsign
 [commit]
-	gpgsign = true
+	gpgsign = false
