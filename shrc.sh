@@ -1,26 +1,53 @@
-export PATH=/usr/local/sbin:$PATH
-if [ -d "$HOME/.bin" ] ; then
-    export PATH="$HOME/.bin:$PATH"
-fi
+#!/bin/sh
+# shellcheck disable=SC2155
 
-# Custom Prompt
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    export PS1='\[\e[0;31m\][\u@\h \W]\$\[\e[0m\] '
-else
-    export PS1='\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] '
-fi
 
-# git
-if [ -f ~/.git-completion.bash ]; then
-  source ~/.git-completion.bash
-fi
+# Setup paths
+remove_from_path() {
+  [ -d "$1" ] || return
+  PATHSUB=":$PATH:"
+  PATHSUB=${PATHSUB//:$1:/:}
+  PATHSUB=${PATHSUB#:}
+  PATHSUB=${PATHSUB%:}
+  export PATH="$PATHSUB"
+}
+
+add_to_path_start() {
+  [ -d "$1" ] || return
+  remove_from_path "$1"
+  export PATH="$1:$PATH"
+}
+
+add_to_path_end() {
+  [ -d "$1" ] || return
+  remove_from_path "$1"
+  export PATH="$PATH:$1"
+}
+
+force_add_to_path_start() {
+  remove_from_path "$1"
+  export PATH="$1:$PATH"
+}
+
+quiet_which() {
+  command -v "$1" >/dev/null
+}
+
+add_to_path_start "/usr/local/sbin"
+add_to_path_start "/home/linuxbrew/.linuxbrew/bin"
+add_to_path_start "/usr/local/bin"
+add_to_path_start "/opt/homebrew/bin"
+
+# if [ -d "$HOME/.bin" ] ; then
+#     export PATH="$HOME/.bin:$PATH"
+# fi
+
 # git alias
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
 alias gsign='git commit -C HEAD -S -s --amend'
 
 # terminal configs
-export ALTERNATE_EDITOR=emacs EDITOR=emacs VISUAL=emacs
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 alias reset-color="echo -e \"\e[39m\""
 
 # android
@@ -44,7 +71,7 @@ if [ -n "$MYSQLPATH" ]; then
 fi
 
 # Lets use rbenv for now
-eval "$(rbenv init -)"
+quiet_which rbenv && eval "$(rbenv init -)"
 
 genpasswd() {
     local l=$1
@@ -52,30 +79,21 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
-# emacs
-if [ -d /usr/local/Emacs ]; then
-  export PATH=/usr/local/Emacs/bin:$PATH
-fi
-alias e='emacsclient -t -a ""'
-alias egit='e $(git ls-files -m)'
-
-# GPG
-export GPG_TTY=`tty`
-
 # Docker
 eval `boot2docker shellinit 2>/dev/null`
-
-# Better history, things like, append the history to other tabs
-shopt -s histappend
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-export HISTCONTROL=ignoredups:erasedups
-export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # GitHub config
 if [ -d $HOME/src/github ]; then
     alias gh='cd $HOME/src/github/; pwd; ruby -v'
 fi
+
+# Save directory changes
+cd() {
+  builtin cd "$@" || return
+  [ "$TERMINALAPP" ] && command -v set_terminal_app_pwd >/dev/null \
+    && set_terminal_app_pwd
+  pwd > "$HOME/.lastpwd"
+}
 
 # from https://github.com/fxn/dotfiles/blob/c84d469981c424f1b7081914dc517bd24132d876/bashrc#L27
 # Given an array GO_SHORTCUTS defined elsewhere with pairs shorcut -> directory:

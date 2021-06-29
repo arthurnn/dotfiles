@@ -1,19 +1,15 @@
-# Compiled Python files
-*.pyc
-
-# Folder view configuration files
-.DS_Store
-Desktop.ini
-
-# Thumbnail cache files
-._*
-Thumbs.db
-
-# Files that might appear on external disks
-.Spotlight-V100
-.Trashes
-
-# Ignore emacs buffer files
-\#*#
-
-vendor/bundle
+/ssh/id_*
+/ssh/id_rsa
+/ssh/*_rsa*
+/ssh/known_hosts
+/gnupg/*.d/
+/gnupg/*.db
+/gnupg/*.gpg
+/gnupg/*.kbx
+/gnupg/*.private.*
+/gnupg/.*
+/gnupg/gpg-agent.conf
+bundle/cache
+secrets
+rbenv/*/
+Brewfile.lock.json
