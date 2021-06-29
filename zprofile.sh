@@ -45,7 +45,7 @@ elif [ -n "${SSH_CONNECTION}" ]
 then
   export PROMPT='%{$fg_bold[cyan]%}%m %{$fg_bold[blue]%}# %b%f'
 else
-  export PROMPT='%{$fg_bold[green]%}%m %{$fg_bold[blue]%}# %b%f'
+  export PROMPT='%{$fg_bold[green]%}%n %{$fg_bold[blue]%}# %b%f'
 fi
 export RPROMPT='%{$fg_bold[red]%}$(git_branch)%b[%{$fg_bold[blue]%}%~%b%f]'
 
