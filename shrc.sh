@@ -63,6 +63,10 @@ export PATH=$PATH:$GOPATH/bin
 # Python
 export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 
+# To fix libcurl errors from ETHO gem
+# See https://stackoverflow.com/questions/50168647/multiprocessing-causes-python-to-crash-and-gives-an-error-may-have-been-in-progr
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # MySQL 5.7
 export MYSQLPATH=`brew --prefix mysql@5.7 2>/dev/null`
 if [ -n "$MYSQLPATH" ]; then
