@@ -85,11 +85,6 @@ genpasswd() {
 # Docker
 eval `boot2docker shellinit 2>/dev/null`
 
-# GitHub config
-if [ -d $HOME/src/github ]; then
-    alias gh='cd $HOME/src/github/; pwd; ruby -v'
-fi
-
 # Save directory changes
 cd() {
   builtin cd "$@" || return
