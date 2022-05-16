@@ -31,8 +31,6 @@
 	untracked = cyan
 [github]
 	user = arthurnn
-[pull]
-	rebase = true
 [push]
 	default = simple
 [commit]
