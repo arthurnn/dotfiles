@@ -37,3 +37,6 @@
 	gpgsign = false
 [init]
 	defaultBranch = main
+[pull]
+	ff = only
+	rebase = false
