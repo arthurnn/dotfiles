@@ -13,3 +13,5 @@ bundle/cache
 secrets
 rbenv/*/
 Brewfile.lock.json
+.ssh/*
+.vscode/*

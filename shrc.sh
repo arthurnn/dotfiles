@@ -43,6 +43,7 @@ add_to_path_start "$HOME/.bin"
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
 alias gsign='git commit -C HEAD -S -s --amend'
 alias reset-color="echo -e \"\e[39m\""
+alias tmux-main="tmux new-session -A -s main"
 
 if [ $MACOS ]
 then
