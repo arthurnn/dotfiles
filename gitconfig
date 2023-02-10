@@ -33,6 +33,8 @@
 	user = arthurnn
 [push]
 	default = simple
+[pull]
+	rebase = false
 [commit]
 	gpgsign = false
 [init]
