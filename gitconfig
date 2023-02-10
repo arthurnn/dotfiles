@@ -34,11 +34,9 @@
 [push]
 	default = simple
 [pull]
+	ff = only
 	rebase = false
 [commit]
 	gpgsign = false
 [init]
 	defaultBranch = main
-[pull]
-	ff = only
-	rebase = false
