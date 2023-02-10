@@ -14,6 +14,11 @@ then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 fi
 
+if which kubectl &>/dev/null
+then
+  [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+fi
+
 # Enable regex moving
 autoload -U zmv
 
