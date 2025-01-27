@@ -84,7 +84,7 @@ done
 # fi
 
 # Fix up permissions for Codespaces
-# if [ -n "$CODESPACES" ]
-# then
-#   chmod 700 /workspaces
-# fi
+if [ -n "$CODESPACES" ]
+then
+  chmod 700 /workspaces
+fi
