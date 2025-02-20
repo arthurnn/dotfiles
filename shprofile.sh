@@ -49,3 +49,4 @@ fi
 # Load secrets
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
+export EDITOR="code -w"
