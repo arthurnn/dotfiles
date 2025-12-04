@@ -104,3 +104,8 @@ ss() {
 function replace-string {
     git grep -l "$1" | xargs sed -i '' -e"s/$1/$2/g"
 }
+
+# Clean up local branches that have been merged
+function git-cleanup-merged {
+    git branch --merged | grep -v "\*" | grep -v "main\|master\|develop" | xargs -n 1 git branch -d
+}
