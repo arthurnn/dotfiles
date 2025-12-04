@@ -107,5 +107,10 @@ function replace-string {
 
 # Clean up local branches that have been merged
 function git-cleanup-merged {
-    git branch --merged | grep -v "\*" | grep -v "main\|master\|develop" | xargs -n 1 git branch -d
+    local branches=$(git branch --merged | grep -v "\*" | grep -v "main\|master\|develop")
+    if [ -z "$branches" ]; then
+        echo "No merged branches to clean up"
+        return 0
+    fi
+    echo "$branches" | xargs -n 1 git branch -d
 }
