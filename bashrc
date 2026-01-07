@@ -1,11 +1,14 @@
 # check if this is a login shell
 [ "$0" = "-bash" ] && export LOGIN_BASH=1
 
-# run bash_profile if this is not a login shell
-[ -z "$LOGIN_BASH" ] && source ~/.bash_profile
+# Reset profile guard for new interactive shells to ensure prompt is set
+[ -z "$LOGIN_BASH" ] && unset PROFILE_SOURCED
 
-# load shared shell configuration
-source ~/.shrc
+# run bash_profile if this is not a login shell
+[ -z "$LOGIN_BASH" ] && [ -z "$PROFILE_SOURCED" ] && source ~/.bash_profile
+
+# load shared shell configuration (only once)
+[ -z "$SHRC_SOURCED" ] && source ~/.shrc
 
 # History
 export HISTFILE="$HOME/.bash_history"

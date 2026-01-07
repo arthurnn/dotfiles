@@ -1,8 +1,11 @@
-# always source zprofile regardless of whether this is/isn't a login shell
-source ~/.zprofile
+# Reset profile guard for new interactive shells to ensure prompt is set
+unset PROFILE_SOURCED
 
-# load shared shell configuration
-source ~/.shrc
+# always source zprofile regardless of whether this is/isn't a login shell
+[ -z "$PROFILE_SOURCED" ] && source ~/.zprofile
+
+# load shared shell configuration (only once)
+[ -z "$SHRC_SOURCED" ] && source ~/.shrc
 
 # History file
 export HISTFILE=~/.zsh_history

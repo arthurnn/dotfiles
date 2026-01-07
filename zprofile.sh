@@ -1,6 +1,9 @@
 # load shared shell configuration
 source ~/.shprofile
 
+# mark that profile has been sourced
+export PROFILE_SOURCED=1
+
 # Enable completions
 autoload -U compinit && compinit
 

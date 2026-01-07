@@ -1,6 +1,10 @@
 #!/bin/sh
 # shellcheck disable=SC2155
 
+# Prevent re-sourcing to avoid overriding project aliases
+[ -n "$SHRC_SOURCED" ] && return
+export SHRC_SOURCED=1
+
 # Setup paths
 remove_from_path() {
   [ -d "$1" ] || return

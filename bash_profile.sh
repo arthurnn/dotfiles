@@ -3,6 +3,9 @@
 # load shared shell configuration
 source ~/.shprofile
 
+# mark that profile has been sourced
+export PROFILE_SOURCED=1
+
 # check if this is a login and/or interactive shell
 [ "$0" = "-bash" ] && export LOGIN_BASH=1
 echo "$-" | grep -q "i" && export INTERACTIVE_BASH=1

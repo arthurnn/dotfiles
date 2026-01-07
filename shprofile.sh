@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Prevent re-sourcing
+[ -n "$SHPROFILE_SOURCED" ] && return
+export SHPROFILE_SOURCED=1
+
 # 077 would be more secure, but 022 is more useful.
 umask 022
 
