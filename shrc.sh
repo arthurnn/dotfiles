@@ -39,6 +39,11 @@ add_to_path_start "/opt/homebrew/bin"
 
 add_to_path_start "$HOME/.bin"
 
+# Ghostty terminfo fallback for remote machines without it
+if [ "$TERM" = "xterm-ghostty" ] && ! infocmp xterm-ghostty >/dev/null 2>&1; then
+  export TERM=xterm-256color
+fi
+
 # aliases
 alias gl='git log --date=short --pretty=format:"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d" --stat'
 alias gsign='git commit -C HEAD -S -s --amend'
