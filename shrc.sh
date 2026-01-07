@@ -77,23 +77,21 @@ export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 # See https://stackoverflow.com/questions/50168647/multiprocessing-causes-python-to-crash-and-gives-an-error-may-have-been-in-progr
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-# MySQL 5.7
-export MYSQLPATH=`brew --prefix mysql@5.7 2>/dev/null`
-if [ -n "$MYSQLPATH" ]; then
-   export PATH=$MYSQLPATH/bin:$PATH
+# Lazy-load rbenv to speed up shell startup
+if quiet_which rbenv; then
+  export PATH="$HOME/.rbenv/shims:$PATH"
+  rbenv() {
+    unset -f rbenv
+    eval "$(command rbenv init -)"
+    rbenv "$@"
+  }
 fi
-
-# Lets use rbenv for now
-quiet_which rbenv && eval "$(rbenv init -)"
 
 genpasswd() {
     local l=$1
     [ "$l" == "" ] && l=16
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
-
-# Docker
-eval `boot2docker shellinit 2>/dev/null`
 
 # Save directory changes
 cd() {
