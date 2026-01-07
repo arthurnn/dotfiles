@@ -40,3 +40,5 @@
 	gpgsign = false
 [init]
 	defaultBranch = main
+[url "ssh://git@"]
+	insteadOf = https://
