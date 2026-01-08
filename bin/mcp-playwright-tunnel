@@ -1,0 +1,125 @@
+#!/bin/bash
+# mcp-playwright-tunnel - Start Playwright MCP server and tunnel to remote host
+#
+# Usage:
+#   mcp-playwright-tunnel start   - Start the tunnel in background
+#   mcp-playwright-tunnel stop    - Stop the tunnel
+#   mcp-playwright-tunnel status  - Check if running
+#   mcp-playwright-tunnel log     - Tail the log file
+#   mcp-playwright-tunnel run     - Run in foreground (for debugging)
+
+set -e
+
+# Configuration - override with environment variables
+MCP_PORT="${MCP_PORT:-8931}"
+REMOTE_HOST="${REMOTE_HOST:-192.168.2.35}"
+REMOTE_USER="${REMOTE_USER:-ubuntu}"
+
+PIDFILE="$HOME/.mcp-playwright-tunnel.pid"
+LOGFILE="$HOME/.mcp-playwright-tunnel.log"
+
+cleanup() {
+    echo "Shutting down..."
+    [ -n "$MCP_PID" ] && kill "$MCP_PID" 2>/dev/null
+    exit 0
+}
+
+do_run() {
+    trap cleanup SIGINT SIGTERM
+
+    echo "Starting Playwright MCP server on port $MCP_PORT..."
+    npx -y @playwright/mcp@latest --port "$MCP_PORT" &
+    MCP_PID=$!
+
+    sleep 2
+
+    if ! kill -0 "$MCP_PID" 2>/dev/null; then
+        echo "Failed to start MCP server"
+        exit 1
+    fi
+
+    echo "MCP server running (PID: $MCP_PID)"
+    echo "Creating reverse tunnel to $REMOTE_USER@$REMOTE_HOST:$MCP_PORT..."
+
+    ssh -R "$MCP_PORT:localhost:$MCP_PORT" "$REMOTE_USER@$REMOTE_HOST" -N -o ServerAliveInterval=60 -o ServerAliveCountMax=3
+
+    cleanup
+}
+
+do_start() {
+    if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+        echo "Already running (PID $(cat "$PIDFILE"))"
+        exit 1
+    fi
+
+    echo "Starting mcp-playwright-tunnel..."
+    nohup "$0" run > "$LOGFILE" 2>&1 &
+    echo $! > "$PIDFILE"
+    sleep 2
+
+    if kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+        echo "Started (PID $(cat "$PIDFILE"))"
+    else
+        echo "Failed to start - check log: $LOGFILE"
+        rm -f "$PIDFILE"
+        exit 1
+    fi
+}
+
+do_stop() {
+    if [ -f "$PIDFILE" ]; then
+        PID=$(cat "$PIDFILE")
+        if kill -0 "$PID" 2>/dev/null; then
+            # Kill the process group to catch child processes
+            pkill -P "$PID" 2>/dev/null
+            kill "$PID" 2>/dev/null
+            echo "Stopped (PID $PID)"
+        else
+            echo "Process not running"
+        fi
+        rm -f "$PIDFILE"
+    else
+        echo "Not running"
+    fi
+}
+
+do_status() {
+    if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+        echo "Running (PID $(cat "$PIDFILE"))"
+        echo "Target: $REMOTE_USER@$REMOTE_HOST:$MCP_PORT"
+    else
+        echo "Not running"
+        rm -f "$PIDFILE" 2>/dev/null
+    fi
+}
+
+do_log() {
+    if [ -f "$LOGFILE" ]; then
+        tail -f "$LOGFILE"
+    else
+        echo "No log file found"
+    fi
+}
+
+case "${1:-}" in
+    run)    do_run ;;
+    start)  do_start ;;
+    stop)   do_stop ;;
+    status) do_status ;;
+    log)    do_log ;;
+    *)
+        echo "Usage: $0 {start|stop|status|log|run}"
+        echo ""
+        echo "Commands:"
+        echo "  start   - Start the tunnel in background"
+        echo "  stop    - Stop the tunnel"
+        echo "  status  - Check if running"
+        echo "  log     - Tail the log file"
+        echo "  run     - Run in foreground (for debugging)"
+        echo ""
+        echo "Environment variables:"
+        echo "  MCP_PORT    - Port for MCP server (default: 8931)"
+        echo "  REMOTE_HOST - Remote host IP (default: 192.168.2.35)"
+        echo "  REMOTE_USER - Remote user (default: ubuntu)"
+        ;;
+esac
