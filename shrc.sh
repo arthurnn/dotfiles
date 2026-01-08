@@ -77,6 +77,18 @@ export PATH=$PATH:$HOME/Library/Python/2.7/bin/
 # See https://stackoverflow.com/questions/50168647/multiprocessing-causes-python-to-crash-and-gives-an-error-may-have-been-in-progr
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
+# nvm (Node Version Manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# pyenv (Python Version Manager)
+export PYENV_ROOT="$HOME/.pyenv"
+[ -d "$PYENV_ROOT/bin" ] && export PATH="$PYENV_ROOT/bin:$PATH"
+if quiet_which pyenv; then
+  eval "$(pyenv init -)"
+fi
+
 # Lazy-load rbenv to speed up shell startup
 if quiet_which rbenv; then
   export PATH="$HOME/.rbenv/shims:$PATH"
