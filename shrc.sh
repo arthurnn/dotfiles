@@ -43,6 +43,11 @@ add_to_path_start "/opt/homebrew/bin"
 
 add_to_path_start "$HOME/.bin"
 
+# Ubuntu-specific paths
+if [ -f /etc/lsb-release ] && grep -q "Ubuntu" /etc/lsb-release 2>/dev/null; then
+  add_to_path_end "$HOME/.local/bin"
+fi
+
 # Ghostty terminfo fallback for remote machines without it
 if [ "$TERM" = "xterm-ghostty" ] && ! infocmp xterm-ghostty >/dev/null 2>&1; then
   export TERM=xterm-256color
