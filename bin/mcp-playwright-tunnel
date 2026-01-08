@@ -18,9 +18,29 @@ REMOTE_USER="${REMOTE_USER:-ubuntu}"
 PIDFILE="$HOME/.mcp-playwright-tunnel.pid"
 LOGFILE="$HOME/.mcp-playwright-tunnel.log"
 
+cleanup_port() {
+    echo "Checking for processes on port $MCP_PORT..."
+    PIDS=$(lsof -ti tcp:"$MCP_PORT" 2>/dev/null || true)
+    if [ -n "$PIDS" ]; then
+        echo "Found processes still using port $MCP_PORT: $PIDS"
+        echo "$PIDS" | xargs kill 2>/dev/null || true
+        sleep 1
+        # Force kill if still alive
+        PIDS=$(lsof -ti tcp:"$MCP_PORT" 2>/dev/null || true)
+        if [ -n "$PIDS" ]; then
+            echo "Force killing processes: $PIDS"
+            echo "$PIDS" | xargs kill -9 2>/dev/null || true
+        fi
+        echo "Port $MCP_PORT cleaned up"
+    else
+        echo "Port $MCP_PORT is free"
+    fi
+}
+
 cleanup() {
     echo "Shutting down..."
     [ -n "$MCP_PID" ] && kill "$MCP_PID" 2>/dev/null
+    cleanup_port
     exit 0
 }
 
@@ -81,6 +101,9 @@ do_stop() {
     else
         echo "Not running"
     fi
+
+    # Clean up any processes still using the port
+    cleanup_port
 }
 
 do_status() {
