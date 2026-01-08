@@ -9,7 +9,7 @@ Clone to any machine and run:
 git clone https://github.com/arthurnn/dotfiles.git && cd dotfiles && script/setup
 ```
 
-The setup script symlinks all dotfiles to `$HOME` (e.g., `bashrc` -> `~/.bashrc`).
+The setup script symlinks all files and folders to `$HOME` with a dot prefix (e.g., `bashrc` -> `~/.bashrc`, `bin/` -> `~/.bin/`). PATH includes `~/.bin` via `shrc.sh`.
 
 ## Structure
 
