@@ -37,6 +37,18 @@ cleanup_port() {
     fi
 }
 
+cleanup_remote_port() {
+    echo "Checking for orphaned SSH tunnels on remote host..."
+    ssh "$REMOTE_USER@$REMOTE_HOST" "
+        PIDS=\$(lsof -ti tcp:$MCP_PORT 2>/dev/null || true)
+        if [ -n \"\$PIDS\" ]; then
+            echo 'Found orphaned tunnels on port $MCP_PORT, cleaning up...'
+            echo \"\$PIDS\" | xargs kill 2>/dev/null || true
+            sleep 1
+        fi
+    " 2>/dev/null || echo "Warning: Could not clean remote port (continuing anyway)"
+}
+
 cleanup() {
     echo "Shutting down..."
     [ -n "$MCP_PID" ] && kill "$MCP_PID" 2>/dev/null
@@ -46,6 +58,9 @@ cleanup() {
 
 do_run() {
     trap cleanup SIGINT SIGTERM
+
+    # Clean up any orphaned tunnels on remote host first
+    cleanup_remote_port
 
     echo "Starting Playwright MCP server on port $MCP_PORT..."
     npx -y @playwright/mcp@latest --port "$MCP_PORT" &
@@ -102,8 +117,9 @@ do_stop() {
         echo "Not running"
     fi
 
-    # Clean up any processes still using the port
+    # Clean up any processes still using the port (both local and remote)
     cleanup_port
+    cleanup_remote_port
 }
 
 do_status() {
