@@ -48,3 +48,6 @@ which direnv &>/dev/null && eval "$(direnv hook zsh)"
 
 # to avoid non-zero exit code
 true
+
+# opencode
+[ -d "/Users/arthurnn/.opencode/bin" ] && export PATH=/Users/arthurnn/.opencode/bin:$PATH
