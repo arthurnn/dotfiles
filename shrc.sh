@@ -104,6 +104,11 @@ if quiet_which rbenv; then
   }
 fi
 
+# Added by LM Studio CLI (lms) - only if directory exists
+LMSTUDIO_PATH="$HOME/.lmstudio/bin"
+[ -d "$LMSTUDIO_PATH" ] && export PATH="$PATH:$LMSTUDIO_PATH"
+# End of LM Studio CLI section
+
 genpasswd() {
     local l=$1
     [ "$l" == "" ] && l=16

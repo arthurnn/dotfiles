@@ -21,3 +21,4 @@ which direnv &>/dev/null && eval "$(direnv hook bash)"
 
 # to avoid non-zero exit code
 true
+

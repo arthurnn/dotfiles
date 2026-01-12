@@ -67,3 +67,4 @@ then
   # fix delete key on macOS
   [ "$MACOS" ] && bind '"\e[3~" delete-char'
 fi
+

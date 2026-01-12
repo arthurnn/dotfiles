@@ -51,3 +51,4 @@ true
 
 # opencode
 [ -d "/Users/arthurnn/.opencode/bin" ] && export PATH=/Users/arthurnn/.opencode/bin:$PATH
+
