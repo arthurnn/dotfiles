@@ -63,7 +63,7 @@ do_run() {
     cleanup_remote_port
 
     echo "Starting Playwright MCP server on port $MCP_PORT..."
-    npx -y @playwright/mcp@latest --port "$MCP_PORT" &
+    npx -y @playwright/mcp@latest  --isolated --port "$MCP_PORT" &
     MCP_PID=$!
 
     sleep 2
