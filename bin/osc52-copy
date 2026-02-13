@@ -1,0 +1,5 @@
+#!/bin/bash
+# Copy stdin to clipboard via OSC52, writing directly to tmux client tty
+# Works over SSH, mosh, and local tmux
+TTY=$(tmux display -p "#{client_tty}")
+printf '\e]52;c;%s\a' "$(base64 | tr -d '\n')" > "$TTY"
