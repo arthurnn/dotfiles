@@ -9,6 +9,7 @@
 [alias]
 	co = checkout
 	ci = commit
+	fetchco = "!f() { git fetch origin \"$1\":\"$1\" && git checkout \"$1\"; }; f"
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
