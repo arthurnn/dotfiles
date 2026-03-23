@@ -39,7 +39,8 @@ for DOTFILE in *; do
   fi
 
   # Don't try to install documentation/script files
-  echo $DOTFILE | egrep -q '(^script/$|\.txt$|\.md$|Dockerfile$)' && continue
+  # Skip copilot/ - handled separately to preserve runtime data
+  echo $DOTFILE | egrep -q '(^script/$|^copilot/$|\.txt$|\.md$|Dockerfile$)' && continue
 
   # Fixup VSCode settings path
   echo $DOTFILE | grep -q 'vscode-settings' &&
@@ -82,3 +83,13 @@ done
 # then
 #   ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
 # fi
+
+# Symlink Copilot config files individually (not the whole folder)
+if [ $UNIX ]
+then
+  mkdir -p "$HOME/.copilot"
+  for COPILOTFILE in "$DOTFILESDIR/copilot/"*; do
+    BASENAME=$(basename "$COPILOTFILE")
+    ln -sfv "$COPILOTFILE" "$HOME/.copilot/$BASENAME"
+  done
+fi
